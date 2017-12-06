@@ -10,5 +10,6 @@ To do:
 * Add a legend
 * Style the page properly
 * Better colours
+* Less violent initial burst of motion
 * More info in the tooltips
 * Tooltips don't go off the top of the map
