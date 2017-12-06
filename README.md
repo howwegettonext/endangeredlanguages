@@ -7,9 +7,10 @@ Language data from Unesco via the [Guardian Datablog](https://www.theguardian.co
 
 To do:
 * Allow pan and zoom
+* Dynamically resize when browser window is resized
 * Add a legend
 * Style the page properly
 * Better colours
 * Less violent initial burst of motion
-* More info in the tooltips
+* More info in the tooltips (probably just speaker count)
 * Tooltips don't go off the top of the map
