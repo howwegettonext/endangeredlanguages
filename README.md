@@ -14,3 +14,4 @@ To do:
 * Less violent initial burst of motion
 * More info in the tooltips (probably just speaker count)
 * Tooltips don't go off the top of the map
+* Update to D3v4?
