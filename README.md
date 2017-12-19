@@ -6,6 +6,7 @@ Built with [D3v3](https://d3js.org/), [TopoJSON](https://github.com/topojson/top
 Language data from Unesco via the [Guardian Datablog](https://www.theguardian.com/news/datablog/2011/apr/15/language-extinct-endangered). World map from [Natural Earth](http://www.naturalearthdata.com/). Code adapted from [Mike Bostock](https://bl.ocks.org/mbostock/4055892).
 
 To do:
+* Figure out why I get a load of errors when the force layout is settling
 * Allow pan and zoom
 * Dynamically resize when browser window is resized
 * Add a legend
