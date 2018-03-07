@@ -74,6 +74,8 @@ a:hover {
 
 #seriestitle {
     padding-top: 17px;
+    float: right;
+    font-weight: bold;
 }
 
 
