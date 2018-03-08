@@ -1,3 +1,6 @@
+// Draw a bubble chart of the world's languages
+// Adapted from: https://bl.ocks.org/mbostock/4063269
+
 // Grab the size of the container div and set that as the circle diameter
 let diameter = parseInt(d3.select('#bigcircle').style('width'), 10);
 
@@ -42,7 +45,7 @@ d3.csv("data/languages.csv",
 			});
 
 		// Add circles to each group
-		node.append("circle")
+		let circles = node.append("circle")
 			.attr("r", function (d) { // Set the radius
 				return d.r;
 			})
@@ -73,4 +76,33 @@ d3.csv("data/languages.csv",
 			.text(function (d) {
 				return d.data.name + "\n" + d.data.danger + "\n" + "Speakers: " + format(d.data.speakers);
 			});
+	
+	// Update function
+	function update() {
+
+		// Get new width and height
+		diameter = parseInt(d3.select('#bigcircle').style('width'), 10);
+
+		// Redraw the SVG
+		svg.attr("width", diameter)
+			.attr("height", diameter);
+
+		// Redefine the packing function
+		pack.size([diameter, diameter]);
+
+		// Move the dots
+		node.data(pack(root).leaves())
+			.attr("transform", function (d) {
+				return "translate(" + d.x + "," + d.y + ")"; 
+			});
+		
+		// Resize the circles
+		circles.attr("r", function (d) {
+				return d.r;
+			});
+	}
+
+	// Listen for resize and update
+	window.addEventListener("resize", update);
+	
 	});
