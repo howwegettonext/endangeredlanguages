@@ -20,6 +20,27 @@ h2 {
     padding-bottom: 10px;
 }
 
+h3 {
+  font-size: 28px;
+  text-align: center;
+  z-index: 999;
+  position: absolute;
+  top: 810px;
+  left: 0;
+  right: 0;
+}
+
+h4 {
+  font-size: 215px;
+  text-align: center;
+  line-height: 180px;
+  z-index: 999;
+  position: absolute;
+  top: 630px;
+  left: 0;
+  right: 0;
+}
+
 p {
     font-size: 18px;
     padding: 10px 0;
@@ -156,4 +177,28 @@ a svg:hover .social {
 
 #serieslogo {
     width: 250px;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 768px) {
+  h3 {
+    top: 760px;
+    padding: 0 100px;
+  }
+  h4 {
+    top: 580px;
+  }
+}
+
+@media (max-width:560px) {
+  h3 {
+    top: 660px;
+    padding: 0 60px;
+  }
+
+  h4 {
+    top: 520px;
+    font-size: 125px;
+  }
 }
