@@ -91,6 +91,11 @@ a:hover {
   height: 200px;
   margin: 1em;
   background-color: pink;
+  vertical-align: middle;
+}
+
+.inline {
+  display: inline;
 }
 
 /* OUTRO */
