@@ -20,6 +20,17 @@ h2 {
     padding-bottom: 10px;
 }
 
+h3 {
+  font-size: 28px;
+  text-align: center;
+}
+
+h4 {
+  font-size: 215px;
+  text-align: center;
+  line-height: 180px;
+}
+
 p {
     font-size: 18px;
     padding: 10px 0;
