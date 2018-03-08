@@ -1,12 +1,17 @@
-// Select the svg, then pull the diameter of the circle from it
-var svg = d3.select("svg"),
-	diameter = +svg.attr("width");
+// Grab the size of the container div and set that as the circle diameter
+let diameter = parseInt(d3.select('#bigcircle').style('width'), 10);
+
+// Add an svg of the right size to the circle div
+let svg = d3.select("#bigcircle")
+	.append("svg")
+	.attr("width", diameter)
+	.attr("height", diameter);
 
 // Set a number formatter for the tooltips
-var format = d3.format(",d");
+let format = d3.format(",d");
 
 // Define the circle packing function
-var pack = d3.pack()
+let pack = d3.pack()
 	.size([diameter, diameter])
 	.padding(0.5);
 
@@ -20,7 +25,7 @@ d3.csv("../data/languages.csv",
 		if (error) throw error;
 
 		// This sets up a hierarchy so the circle packing function works
-		var root = d3.hierarchy({
+		let root = d3.hierarchy({
 				children: languages // This is where the data is input
 			})
 			.sum(function (d) {
@@ -28,7 +33,7 @@ d3.csv("../data/languages.csv",
 			});
 
 		// This plots a group for each circle,  through a normal D3 data join
-		var node = svg.selectAll(".node")
+		let node = svg.selectAll(".node")
 			.data(pack(root).leaves()) // Grab the data
 			.enter().append("g")
 			.attr("class", "node")
