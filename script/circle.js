@@ -16,7 +16,7 @@ let pack = d3.pack()
 	.padding(0.5);
 
 // Load the data
-d3.csv("../data/languages.csv",
+d3.csv("data/languages.csv",
 	function (d) {
 		d.speakers = +d.speakers; // Ensure speakers is a number
 		if (d.speakers) return d; // Exclude languages without a speaker number
