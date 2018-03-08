@@ -191,7 +191,7 @@ a svg:hover .social {
   }
 }
 
-@media (max-width:500px) {
+@media (max-width:560px) {
   h3 {
     top: 660px;
     padding: 0 60px;
