@@ -178,3 +178,27 @@ a svg:hover .social {
 #serieslogo {
     width: 250px;
 }
+
+/* MEDIA QUERIES */
+
+@media (max-width: 768px) {
+  h3 {
+    top: 760px;
+    padding: 0 100px;
+  }
+  h4 {
+    top: 580px;
+  }
+}
+
+@media (max-wdith:375px) {
+  h3 {
+    top: 660px;
+    padding: 0 60px;
+  }
+
+  h4 {
+    top: 520px;
+    size: 125px;
+  }
+}
