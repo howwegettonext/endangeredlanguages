@@ -132,6 +132,10 @@ a:hover {
   vertical-align: middle;
 }
 
+.world {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
 /* OUTRO */
 
 #outro {
@@ -220,5 +224,9 @@ a svg:hover .social {
     grid-template-columns: 100%;
     grid-template-rows: 300px 140px 300px 140px 300px 140px;
     grid-gap: 35px;
+  }
+
+  .world {
+    grid-column-end: 2;
   }
 }
