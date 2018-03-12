@@ -29,7 +29,7 @@ d3.csv("data/languages.csv",
 
 		// This sets up a hierarchy so the circle packing function works
 		let root = d3.hierarchy({
-				children: languages // This is where the data is input
+				children: languages.filter(lang => lang.danger != "Extinct") // This is where the data is input
 			})
 			.sum(function (d) {
 				return d.speakers; // This defines the size of the circle
