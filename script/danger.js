@@ -1,9 +1,7 @@
 // Bubble charts of language danger categories
 
 // Grab the size of the container div and set that as the circle diameter
-//let boxsingle_diameter = parseInt(d3.select('.box-single').style('width'), 10);
-
-let boxsingle_diameter = 200
+let boxsingle_diameter = parseInt(d3.select('.box-single').style('width'), 10);
 
 // Add svgs to each of the divs
 let vul_svg = d3.select(".vulnerable")
@@ -26,7 +24,10 @@ let vul_svg = d3.select(".vulnerable")
 // Define the circle packing function
 let boxsingle_pack = d3.pack()
 	.size([boxsingle_diameter, boxsingle_diameter])
-	.padding(0.5);
+	.padding(0.5)
+	.radius(function (d) {
+		return Math.sqrt(d.value * boxsingle_diameter / 2000000);
+	});
 
 // -------------------------------
 
@@ -194,7 +195,7 @@ d3.csv("data/languages.csv",
 		function update() {
 
 			// Get new width and height
-			boxsingle_diameter = parseInt(d3.select('box-single').style('width'), 10);
+			boxsingle_diameter = parseInt(d3.select('.box-single').style('width'), 10);
 
 			// Redraw the SVGs
 			vul_svg.attr("width", boxsingle_diameter)
@@ -210,7 +211,10 @@ d3.csv("data/languages.csv",
 				.attr("height", boxsingle_diameter);
 
 			// Redefine the packing function
-			pack.size([boxsingle_diameter, boxsingle_diameter]);
+			boxsingle_pack.size([boxsingle_diameter, boxsingle_diameter])
+				.radius(function (d) {
+					return Math.sqrt(d.value * boxsingle_diameter / 2000000);
+				});
 
 			// Move the dots
 			vul_node.data(boxsingle_pack(vul_root).leaves())
