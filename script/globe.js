@@ -9,18 +9,14 @@ function initialize() {
 		// Set the basic visual options
 		var options = {
 			zoom: 5,
-			position: [position.coords.latitude, position.coords.longitude] // Get user's position from the geolocation API and set as starting position
+			position: [position.coords.latitude, position.coords.longitude], // Get user's position from the geolocation API and set as starting position
+			bounds: [[-84, -179], [84, 179]],
+			minZoom: 2,
+			maxZoom: 15
 		};
 
 		// Plot the Earth
 		var earth = new WE.map('earth_div', options);
-
-		// Set the Earth options
-		options = {
-			bounds: [[-84, -179], [84, 179]],
-			minZoom: 2,
-			maxZoom: 18
-		};
 
 		// Load the tiles
 		let tiles = WE.tileLayer('https://stamen-tiles.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png', options);
