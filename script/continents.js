@@ -29,7 +29,7 @@ let continentHier = (languages, continent) => d3.hierarchy({
 	children: languages.filter(lang => lang.continents.includes(continent))
 }).sum(function (d) {
 	return d.speakers; // This defines the size of the circle
-})
+});
 
 // Define a function to create a group for each circle through a normal D3 data join
 let continentGroups = (svg, hierarchy) => svg.selectAll(".node")
@@ -73,7 +73,7 @@ let continentFill = (group) => {
 					return "blue";
 			}
 		});
-}
+};
 
 // Define a function to redraw the SVGs on resize
 let redrawContinentSVG = (svg) => svg
