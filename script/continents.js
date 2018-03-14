@@ -1,33 +1,20 @@
-// Bubble charts of language danger categories
+// Bubble charts of language continent categories
 
 // Grab the size of the container div and set that as the circle diameter
 let countrybox_diameter = parseInt(d3.select('.box').style('width'), 10);
 
 // Add svgs to each of the divs
-let as_svg = d3.select(".asia")
-	.append("svg")
-	.attr("width", countrybox_diameter)
-	.attr("height", countrybox_diameter),
-	af_svg = d3.select(".africa")
-	.append("svg")
-	.attr("width", countrybox_diameter)
-	.attr("height", countrybox_diameter),
-	eu_svg = d3.select(".europe")
-	.append("svg")
-	.attr("width", countrybox_diameter)
-	.attr("height", countrybox_diameter),
-	na_svg = d3.select(".namerica")
-	.append("svg")
-	.attr("width", countrybox_diameter)
-	.attr("height", countrybox_diameter),
-	sa_svg = d3.select(".samerica")
-	.append("svg")
-	.attr("width", countrybox_diameter)
-	.attr("height", countrybox_diameter),
-	oc_svg = d3.select(".oceania")
+let countrySVG = (selector) => d3.select(selector)
 	.append("svg")
 	.attr("width", countrybox_diameter)
 	.attr("height", countrybox_diameter);
+
+let as_svg = countrySVG(".asia"),
+	af_svg = countrySVG(".africa"),
+	eu_svg = countrySVG(".europe"),
+	na_svg = countrySVG(".namerica"),
+	sa_svg = countrySVG(".samerica"),
+	oc_svg = countrySVG(".oceania");
 
 // Define the circle packing function
 let countrybox_pack = d3.pack()
@@ -37,10 +24,77 @@ let countrybox_pack = d3.pack()
 		return Math.sqrt(d.value * countrybox_diameter / 2000000);
 	});
 
+// Define a function to set up the hierarchies for packing function
+let continentHier = (languages, continent) => d3.hierarchy({
+	children: languages.filter(lang => lang.continents.includes(continent))
+}).sum(function (d) {
+	return d.speakers; // This defines the size of the circle
+})
+
+// Define a function to create a group for each circle through a normal D3 data join
+let continentGroups = (svg, hierarchy) => svg.selectAll(".node")
+	.data(countrybox_pack(hierarchy).leaves()) // Grab the data
+	.enter().append("g")
+	.attr("class", "node")
+	.attr("transform", function (d) {
+		return "translate(" + d.x + "," + d.y + ")"; // Move group to position
+	});
+
+// Define a function to add circles and HTML titles to each group
+let continentFill = (group) => {
+	// First stick a title on it
+	group.append("title")
+		.text(function (d) {
+			return d.data.name + "\n" + d.data.danger + "\n" + "Speakers: " + format(d.data.speakers);
+		});
+	// Then return the circle so we can adjust radii later
+	return group.append("circle")
+		.attr("r", function (d) { // Set the radius
+			return d.r;
+		})
+		.style("fill", function (d) { // Set the colours
+			switch (d.data.danger) {
+				case "Vulnerable":
+					return "#619d94";
+
+				case "Definitely endangered":
+					return "#ff8f78";
+
+				case "Severely endangered":
+					return "#fc4952";
+
+				case "Critically endangered":
+					return "#983d52";
+
+				case "Extinct":
+					return "#cccccc";
+
+				default:
+					return "blue";
+			}
+		});
+}
+
+// Define a function to redraw the SVGs on resize
+let redrawContinentSVG = (svg) => svg
+	.attr("width", countrybox_diameter)
+	.attr("height", countrybox_diameter);
+
+// Define a function to move the dots on resize
+let moveContinentDots = (node, hierarchy) => node.data(countrybox_pack(hierarchy).leaves())
+	.attr("transform", function (d) {
+		return "translate(" + d.x + "," + d.y + ")";
+	});
+
+// Define a function to resize the dots on resize
+let continentResize = (circles) => circles.attr("r", function (d) {
+				return d.r;
+			});
+
 // -------------------------------
 
 // Load the data
-d3.csv("data/languages.csv",
+d3.csv("data/languages_name.csv",
 	function (d) {
 		d.speakers = +d.speakers; // Ensure speakers is a number
 		d.continents = d.continents.split(" ")
@@ -54,340 +108,32 @@ d3.csv("data/languages.csv",
 		if (error) throw error;
 
 		// Set up the hierarchies for the packing function
-		let as_root = d3.hierarchy({
-				children: languages.filter(lang => lang.continents.includes("AS")).sort(function (a, b) {
-					var nameA = a.name.toLowerCase(),
-						nameB = b.name.toLowerCase();
-					if (nameA < nameB) //sort string ascending
-						return -1;
-					if (nameA > nameB)
-						return 1;
-					return 0; //default return value (no sorting)
-				}) // This is where the data is input
-			})
-			.sum(function (d) {
-				return d.speakers; // This defines the size of the circle
-			});
-
-		let af_root = d3.hierarchy({
-				children: languages.filter(lang => lang.continents.includes("AF")).sort(function (a, b) {
-					var nameA = a.name.toLowerCase(),
-						nameB = b.name.toLowerCase();
-					if (nameA < nameB) //sort string ascending
-						return -1;
-					if (nameA > nameB)
-						return 1;
-					return 0; //default return value (no sorting)
-				}) // This is where the data is input
-			})
-			.sum(function (d) {
-				return d.speakers; // This defines the size of the circle
-			});
-
-		let eu_root = d3.hierarchy({
-				children: languages.filter(lang => lang.continents.includes("EU")).sort(function (a, b) {
-					var nameA = a.name.toLowerCase(),
-						nameB = b.name.toLowerCase();
-					if (nameA < nameB) //sort string ascending
-						return -1;
-					if (nameA > nameB)
-						return 1;
-					return 0; //default return value (no sorting)
-				}) // This is where the data is input
-			})
-			.sum(function (d) {
-				return d.speakers; // This defines the size of the circle
-			});
-
-		let na_root = d3.hierarchy({
-				children: languages.filter(lang => lang.continents.includes("NA")).sort(function (a, b) {
-					var nameA = a.name.toLowerCase(),
-						nameB = b.name.toLowerCase();
-					if (nameA < nameB) //sort string ascending
-						return -1;
-					if (nameA > nameB)
-						return 1;
-					return 0; //default return value (no sorting)
-				}) // This is where the data is input
-			})
-			.sum(function (d) {
-				return d.speakers; // This defines the size of the circle
-			});
-
-		let sa_root = d3.hierarchy({
-				children: languages.filter(lang => lang.continents.includes("SA")).sort(function (a, b) {
-					var nameA = a.name.toLowerCase(),
-						nameB = b.name.toLowerCase();
-					if (nameA < nameB) //sort string ascending
-						return -1;
-					if (nameA > nameB)
-						return 1;
-					return 0; //default return value (no sorting)
-				}) // This is where the data is input
-			})
-			.sum(function (d) {
-				return d.speakers; // This defines the size of the circle
-			});
-
-		let oc_root = d3.hierarchy({
-				children: languages.filter(lang => lang.continents.includes("OC")).sort(function (a, b) {
-					var nameA = a.name.toLowerCase(),
-						nameB = b.name.toLowerCase();
-					if (nameA < nameB) //sort string ascending
-						return -1;
-					if (nameA > nameB)
-						return 1;
-					return 0; //default return value (no sorting)
-				}) // This is where the data is input
-			})
-			.sum(function (d) {
-				return d.speakers; // This defines the size of the circle
-			});
+		let as_root = continentHier(languages, "AS"),
+			af_root = continentHier(languages, "AF"),
+			eu_root = continentHier(languages, "EU"),
+			na_root = continentHier(languages, "NA"),
+			sa_root = continentHier(languages, "SA"),
+			oc_root = continentHier(languages, "OC");
 
 		// ----------------------------------------------------
 
 		// This plots a group for each circle,  through a normal D3 data join
-		let as_node = as_svg.selectAll(".node")
-			.data(countrybox_pack(as_root).leaves()) // Grab the data
-			.enter().append("g")
-			.attr("class", "node")
-			.attr("transform", function (d) {
-				return "translate(" + d.x + "," + d.y + ")"; // Move group to position
-			});
-
-		let af_node = af_svg.selectAll(".node")
-			.data(countrybox_pack(af_root).leaves()) // Grab the data
-			.enter().append("g")
-			.attr("class", "node")
-			.attr("transform", function (d) {
-				return "translate(" + d.x + "," + d.y + ")"; // Move group to position
-			});
-
-		let eu_node = eu_svg.selectAll(".node")
-			.data(countrybox_pack(eu_root).leaves()) // Grab the data
-			.enter().append("g")
-			.attr("class", "node")
-			.attr("transform", function (d) {
-				return "translate(" + d.x + "," + d.y + ")"; // Move group to position
-			});
-
-		let na_node = na_svg.selectAll(".node")
-			.data(countrybox_pack(na_root).leaves()) // Grab the data
-			.enter().append("g")
-			.attr("class", "node")
-			.attr("transform", function (d) {
-				return "translate(" + d.x + "," + d.y + ")"; // Move group to position
-			});
-
-		let sa_node = sa_svg.selectAll(".node")
-			.data(countrybox_pack(sa_root).leaves()) // Grab the data
-			.enter().append("g")
-			.attr("class", "node")
-			.attr("transform", function (d) {
-				return "translate(" + d.x + "," + d.y + ")"; // Move group to position
-			});
-
-		let oc_node = oc_svg.selectAll(".node")
-			.data(countrybox_pack(oc_root).leaves()) // Grab the data
-			.enter().append("g")
-			.attr("class", "node")
-			.attr("transform", function (d) {
-				return "translate(" + d.x + "," + d.y + ")"; // Move group to position
-			});
-
-
+		let as_node = continentGroups(as_svg, as_root),
+			af_node = continentGroups(af_svg, af_root),
+			eu_node = continentGroups(eu_svg, eu_root),
+			na_node = continentGroups(na_svg, na_root),
+			sa_node = continentGroups(sa_svg, sa_root),
+			oc_node = continentGroups(oc_svg, oc_root);
 
 		// -----------------------------------
 
 		// Add circles to each group
-		let as_circles = as_node.append("circle")
-			.attr("r", function (d) { // Set the radius
-				return d.r;
-			})
-			.style("fill", function (d) { // This sets the colours
-				switch (d.data.danger) {
-					case "Vulnerable":
-						return "#619d94";
-
-					case "Definitely endangered":
-						return "#ff8f78";
-
-					case "Severely endangered":
-						return "#fc4952";
-
-					case "Critically endangered":
-						return "#983d52";
-
-					case "Extinct":
-						return "#cccccc";
-
-					default:
-						return "blue";
-				}
-			});
-
-		let af_circles = af_node.append("circle")
-			.attr("r", function (d) { // Set the radius
-				return d.r;
-			})
-			.style("fill", function (d) { // This sets the colours
-				switch (d.data.danger) {
-					case "Vulnerable":
-						return "#619d94";
-
-					case "Definitely endangered":
-						return "#ff8f78";
-
-					case "Severely endangered":
-						return "#fc4952";
-
-					case "Critically endangered":
-						return "#983d52";
-
-					case "Extinct":
-						return "#cccccc";
-
-					default:
-						return "blue";
-				}
-			});
-
-		let eu_circles = eu_node.append("circle")
-			.attr("r", function (d) { // Set the radius
-				return d.r;
-			})
-			.style("fill", function (d) { // This sets the colours
-				switch (d.data.danger) {
-					case "Vulnerable":
-						return "#619d94";
-
-					case "Definitely endangered":
-						return "#ff8f78";
-
-					case "Severely endangered":
-						return "#fc4952";
-
-					case "Critically endangered":
-						return "#983d52";
-
-					case "Extinct":
-						return "#cccccc";
-
-					default:
-						return "blue";
-				}
-			});
-
-		let na_circles = na_node.append("circle")
-			.attr("r", function (d) { // Set the radius
-				return d.r;
-			})
-			.style("fill", function (d) { // This sets the colours
-				switch (d.data.danger) {
-					case "Vulnerable":
-						return "#619d94";
-
-					case "Definitely endangered":
-						return "#ff8f78";
-
-					case "Severely endangered":
-						return "#fc4952";
-
-					case "Critically endangered":
-						return "#983d52";
-
-					case "Extinct":
-						return "#cccccc";
-
-					default:
-						return "blue";
-				}
-			});
-
-		let sa_circles = sa_node.append("circle")
-			.attr("r", function (d) { // Set the radius
-				return d.r;
-			})
-			.style("fill", function (d) { // This sets the colours
-				switch (d.data.danger) {
-					case "Vulnerable":
-						return "#619d94";
-
-					case "Definitely endangered":
-						return "#ff8f78";
-
-					case "Severely endangered":
-						return "#fc4952";
-
-					case "Critically endangered":
-						return "#983d52";
-
-					case "Extinct":
-						return "#cccccc";
-
-					default:
-						return "blue";
-				}
-			});
-
-		let oc_circles = oc_node.append("circle")
-			.attr("r", function (d) { // Set the radius
-				return d.r;
-			})
-			.style("fill", function (d) { // This sets the colours
-				switch (d.data.danger) {
-					case "Vulnerable":
-						return "#619d94";
-
-					case "Definitely endangered":
-						return "#ff8f78";
-
-					case "Severely endangered":
-						return "#fc4952";
-
-					case "Critically endangered":
-						return "#983d52";
-
-					case "Extinct":
-						return "#cccccc";
-
-					default:
-						return "blue";
-				}
-			});
-
-		// ----------------------------------
-
-		// Little HTML tooltips
-		as_node.append("title")
-			.text(function (d) {
-				return d.data.name + "\n" + d.data.danger + "\n" + "Speakers: " + format(d.data.speakers);
-			});
-
-		af_node.append("title")
-			.text(function (d) {
-				return d.data.name + "\n" + d.data.danger + "\n" + "Speakers: " + format(d.data.speakers);
-			});
-
-		eu_node.append("title")
-			.text(function (d) {
-				return d.data.name + "\n" + d.data.danger + "\n" + "Speakers: " + format(d.data.speakers);
-			});
-
-		na_node.append("title")
-			.text(function (d) {
-				return d.data.name + "\n" + d.data.danger + "\n" + "Speakers: " + format(d.data.speakers);
-			});
-
-		sa_node.append("title")
-			.text(function (d) {
-				return d.data.name + "\n" + d.data.danger + "\n" + "Speakers: " + format(d.data.speakers);
-			});
-
-		oc_node.append("title")
-			.text(function (d) {
-				return d.data.name + "\n" + d.data.danger + "\n" + "Speakers: " + format(d.data.speakers);
-			});
+		let as_circles = continentFill(as_node),
+			af_circles = continentFill(af_node),
+			eu_circles = continentFill(eu_node),
+			na_circles = continentFill(na_node),
+			sa_circles = continentFill(sa_node),
+			oc_circles = continentFill(oc_node);
 
 		// ------------------------------------------
 
@@ -398,23 +144,12 @@ d3.csv("data/languages.csv",
 			countrybox_diameter = parseInt(d3.select('.box').style('width'), 10);
 
 			// Redraw the SVGs
-			as_svg.attr("width", countrybox_diameter)
-				.attr("height", countrybox_diameter);
-
-			af_svg.attr("width", countrybox_diameter)
-				.attr("height", countrybox_diameter);
-
-			eu_svg.attr("width", countrybox_diameter)
-				.attr("height", countrybox_diameter);
-
-			na_svg.attr("width", countrybox_diameter)
-				.attr("height", countrybox_diameter);
-
-			sa_svg.attr("width", countrybox_diameter)
-				.attr("height", countrybox_diameter);
-
-			oc_svg.attr("width", countrybox_diameter)
-				.attr("height", countrybox_diameter);
+			redrawContinentSVG(as_svg);
+			redrawContinentSVG(af_svg);
+			redrawContinentSVG(eu_svg);
+			redrawContinentSVG(na_svg);
+			redrawContinentSVG(sa_svg);
+			redrawContinentSVG(oc_svg);
 
 			// Redefine the packing function
 			countrybox_pack.size([countrybox_diameter, countrybox_diameter])
@@ -423,63 +158,20 @@ d3.csv("data/languages.csv",
 				});
 
 			// Move the dots
-			as_node.data(countrybox_pack(as_root).leaves())
-				.attr("transform", function (d) {
-					return "translate(" + d.x + "," + d.y + ")";
-				});
-			
-			af_node.data(countrybox_pack(af_root).leaves())
-				.attr("transform", function (d) {
-					return "translate(" + d.x + "," + d.y + ")";
-				});
-			
-			eu_node.data(countrybox_pack(eu_root).leaves())
-				.attr("transform", function (d) {
-					return "translate(" + d.x + "," + d.y + ")";
-				});
-			
-			na_node.data(countrybox_pack(na_root).leaves())
-				.attr("transform", function (d) {
-					return "translate(" + d.x + "," + d.y + ")";
-				});
-			
-			sa_node.data(countrybox_pack(sa_root).leaves())
-				.attr("transform", function (d) {
-					return "translate(" + d.x + "," + d.y + ")";
-				});
-			
-			oc_node.data(countrybox_pack(oc_root).leaves())
-				.attr("transform", function (d) {
-					return "translate(" + d.x + "," + d.y + ")";
-				});
-
-			
+			moveContinentDots(as_node, as_root);
+			moveContinentDots(af_node, af_root);
+			moveContinentDots(eu_node, eu_root);
+			moveContinentDots(na_node, na_root);
+			moveContinentDots(sa_node, sa_root);
+			moveContinentDots(oc_node, oc_root);
 
 			// Resize the circles
-			as_circles.attr("r", function (d) {
-				return d.r;
-			});
-			
-			af_circles.attr("r", function (d) {
-				return d.r;
-			});
-			
-			eu_circles.attr("r", function (d) {
-				return d.r;
-			});
-			
-			na_circles.attr("r", function (d) {
-				return d.r;
-			});
-			
-			sa_circles.attr("r", function (d) {
-				return d.r;
-			});
-			
-			oc_circles.attr("r", function (d) {
-				return d.r;
-			});
-
+			continentResize(as_circles);
+			continentResize(af_circles);
+			continentResize(eu_circles);
+			continentResize(na_circles);
+			continentResize(sa_circles);
+			continentResize(oc_circles);
 		}
 
 		// Listen for resize and update
