@@ -38,7 +38,7 @@ function initialize() {
 		}
 
 		// Add the points
-		d3.csv("data/languages.csv",
+		d3.csv("data/languages_number.csv",
 			function (d) {
 				d.speakers = +d.speakers; // Ensure speakers is a number
 				if (d.speakers) return d; // Exclude languages without a speaker number
