@@ -21,7 +21,7 @@ let countrybox_pack = d3.pack()
 	.size([countrybox_diameter, countrybox_diameter])
 	.padding(0.5)
 	.radius(function (d) {
-		return Math.sqrt(d.value * countrybox_diameter / 2000000);
+		return Math.sqrt(d.value * countrybox_diameter / 3000000);
 	});
 
 // Define a function to set up the hierarchies for packing function
@@ -154,7 +154,7 @@ d3.csv("data/languages_name.csv",
 			// Redefine the packing function
 			countrybox_pack.size([countrybox_diameter, countrybox_diameter])
 				.radius(function (d) {
-					return Math.sqrt(d.value * countrybox_diameter / 2000000);
+					return Math.sqrt(d.value * countrybox_diameter / 3000000);
 				});
 
 			// Move the dots
