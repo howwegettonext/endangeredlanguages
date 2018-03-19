@@ -3,6 +3,9 @@
 // Grab the size of the container div and set that as the circle diameter
 let boxsingle_diameter = parseInt(d3.select('.box-single').style('width'), 10);
 
+// Set a formatting function
+let dangerFormat = d3.format(",d");
+
 // Add svgs to each of the divs
 let dangerSVG = (selector) => d3.select(selector)
 	.append("svg")
@@ -44,10 +47,10 @@ let dangerFill = (group, fill) => {
 	// First stick a title on it
 	group.append("title")
 		.text(function (d) {
-			return d.data.name + "\n" + d.data.danger + "\n" + "Speakers: " + format(d.data.speakers);
+			return d.data.name + "\n" + d.data.danger + "\n" + "Speakers: " + dangerFormat(d.data.speakers);
 		});
 	// Then return the circle so we can adjust radii later
-	return group.append("circle") 
+	return group.append("circle")
 		.attr("r", function (d) { // Set the radius
 			return d.r;
 		})
@@ -56,19 +59,19 @@ let dangerFill = (group, fill) => {
 
 // Define a function to redraw the SVGs on resize
 let redrawDangerSVG = (svg) => svg
-				.attr("width", boxsingle_diameter)
-				.attr("height", boxsingle_diameter);
+	.attr("width", boxsingle_diameter)
+	.attr("height", boxsingle_diameter);
 
 // Define a function to move the dots on resize
 let moveDangerDots = (node, hierarchy) => node.data(boxsingle_pack(hierarchy).leaves())
-				.attr("transform", function (d) {
-					return "translate(" + d.x + "," + d.y + ")";
-				});
+	.attr("transform", function (d) {
+		return "translate(" + d.x + "," + d.y + ")";
+	});
 
 // Define a function to resize the dots on resize
 let dangerResize = (circles) => circles.attr("r", function (d) {
-				return d.r;
-			});
+	return d.r;
+});
 
 // -------------------------------
 
@@ -134,8 +137,10 @@ d3.csv("data/languages_name.csv",
 			dangerResize(def_circles);
 			dangerResize(sev_circles);
 			dangerResize(vul_circles);
-
-			// Listen for resize and update
-			window.addEventListener("resize", update);
+			
 		}
+	
+		// Listen for resize and update
+		window.addEventListener("resize", update);
+
 	});
