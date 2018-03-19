@@ -4,11 +4,22 @@
 let userLat = 0,
 	userLon = 0;
 
+// Get the size of the container div and set that as the width and height of the map
+let mapWidth = parseInt(d3.select('.nearest').style('width'), 10);
+
 // Define a formatting function for putting commas into numbers
-let format = d3.format(",d");
+let nearFormat = d3.format(",d");
+
+// Define the map projection and pathing function
+let projection = d3.geoAzimuthalEquidistant()
+	.scale(mapWidth * 3)
+	.translate([mapWidth / 2, mapWidth / 2]);
+
+let path = d3.geoPath()
+	.projection(projection);
 
 // Define a function that calculates the nearest language
-let nearestLang = (userLat, userLon, languages) => {
+let nearLang = (userLat, userLon, languages) => {
 
 	// Start with a null language that's impossibly far away
 	let nearestLanguage = {
@@ -43,8 +54,63 @@ let letsGo = () => d3.csv("data/languages_number.csv",
 		if (error) throw error;
 
 		// Return the nearest language as an alert.
-		let closest = nearestLang(userLat, userLon, languages);
-		alert(`Your nearest endangered language is ${closest.name}, spoken by ${format(closest.speakers)} speakers. UNESCO classifies it as ${closest.danger.toLowerCase()}.`);
+		// Replace this with drawing a map etc.
+		let closest = nearLang(userLat, userLon, languages);
+
+		// Append an SVG, set the width and height
+		let nearSVG = d3.select(".nearest")
+			.append("svg")
+			.attr("width", mapWidth)
+			.attr("height", mapWidth);
+
+		projection.center([userLon, userLat]);
+
+		// Draw the map
+		let nearMap = d3.json("data/world-50m.json", function (error, world) {
+			if (error) throw error;
+
+			var countries = topojson.feature(world, world.objects.countries).features;
+
+			nearSVG.selectAll(".country")
+				.data(countries)
+				.enter().insert("path", ".graticule")
+				.attr("class", "country")
+				.attr("d", path)
+				.style("fill", "#00000008");
+
+		});
+
+		// Calculate where the dot goes
+		let coords = projection([closest.lon, closest.lat]);
+
+		// Add the dot representing the language
+		let dot = nearSVG.append("circle")
+			.attr("cx", coords[0])
+			.attr("cy", coords[1])
+			.attr("r", 30)
+			.style("fill", function (d) {
+				switch (closest.danger) {
+					case "Vulnerable":
+						return "#619d94";
+
+					case "Definitely endangered":
+						return "#ff8f78";
+
+					case "Severely endangered":
+						return "#fc4952";
+
+					case "Critically endangered":
+						return "#983d52";
+
+					case "Extinct":
+						return "#cccccc";
+
+					default:
+						return "blue";
+				}
+			});
+
+		console.log(`Your nearest endangered language is ${closest.name}, spoken by ${nearFormat(closest.speakers)} speakers. UNESCO classifies it as ${closest.danger.toLowerCase()}.`);
 	});
 
 

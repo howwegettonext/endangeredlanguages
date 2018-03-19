@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<script src="https://d3js.org/d3.v4.js"></script>
+	<script src="//d3js.org/topojson.v1.min.js"></script>
 	<style>
 		body {
 			margin: 0;
@@ -18,7 +19,8 @@
 </head>
 
 <body>
-	<script src="script/nearestlang.js"></script>
 	<p>When you click the button, your location will be calculated and your nearest endangered language will be displayed.</p>
 	<button type="button" onclick="locApprove()">Let's go!</button>
+	<div class="nearest" style="width: 500px; "></div>
+	<script src="script/nearestlang.js"></script>
 </body>
