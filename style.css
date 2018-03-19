@@ -161,6 +161,11 @@ button:hover {
   vertical-align: middle;
 }
 
+.box-single.nearest {
+  width: 400px;
+  height: 400px;
+}
+
 .world {
   grid-column-start: 1;
   grid-column-end: 3;
