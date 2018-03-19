@@ -68,6 +68,32 @@ img {
   width: 100%;
 }
 
+/* BUTTONS */
+
+button {
+  font-family:"futura-pt",sans-serif;
+  font-size: 17px;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 3px;
+  letter-spacing: .03em;
+  color: #fff;
+  background-color: #6f9b94;
+  box-sizing:border-box;
+  height:32px;
+  line-height:32px;
+  padding:0 18px;
+  display: inline-block;
+  margin: 0;
+  transition: all 200ms ease-in-out;
+}
+
+button:hover {
+  background-color:#8EC7BF;
+  cursor:pointer;
+}
+
 /* CONTAINER */
 
 #mainwidth {
