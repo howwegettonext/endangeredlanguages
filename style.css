@@ -160,6 +160,11 @@ button:hover {
 .box-single.nearest {
   width: 400px;
   height: 400px;
+  height: 400px;
+}
+
+#nearest-loading {
+    display: none;
 }
 
 .world {
