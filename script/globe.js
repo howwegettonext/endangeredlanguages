@@ -1,7 +1,7 @@
 // Plot the world's endangered languages on a globe
 // Requires d3js v4 and webGLearth v2
 
-function initialize() {
+let initialize = () => {
 	
 	// Access the HTML5 geolocation API
 	navigator.geolocation.getCurrentPosition(function (position, html5Error) {
@@ -56,3 +56,7 @@ function initialize() {
 	});
 
 }
+
+let update = () => {};
+
+initialize();
