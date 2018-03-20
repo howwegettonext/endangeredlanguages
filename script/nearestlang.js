@@ -1,5 +1,8 @@
 // This script calculates the nearest language to the user.
 
+// Create a global variable for adjusting the globe based on user position
+var earth;
+
 // Set some defaults
 let userLat = 0,
 	userLon = 0;
@@ -142,7 +145,7 @@ let locApprove = () => {
 	document.getElementById("nearest-loading").style.display = 'none';
 	
 	// Move the world map to your location
-		
+    earth.setView([userLat, userLon]);
 	});
 
 };
