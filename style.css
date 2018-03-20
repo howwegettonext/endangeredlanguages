@@ -160,11 +160,6 @@ button:hover {
 .box-single.nearest {
   width: 400px;
   height: 400px;
-  height: 400px;
-}
-
-#nearest-loading {
-    display: none;
 }
 
 .world {
@@ -176,6 +171,13 @@ button:hover {
 
 #bigcircle {
     pointer-events: none;
+}
+
+/* NEAREST LANGUAGE */
+
+#nearest-loading {
+    width: 64px;
+    height: 64px;
 }
 
 /* THE WORLD */
