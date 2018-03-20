@@ -127,9 +127,10 @@ let letsGo = () => d3.csv("data/languages_number.csv",
 
 // Create a function that executes when the button is clicked
 let locApprove = () => {
-	// Replace the button with a loading gif
+	// Replace the placeholder with a loading gif, and vanish the button
 	document.getElementById("nearest-button").style.display = 'none';
-	document.getElementById("nearest-loading").style.display = 'block';
+	document.getElementById("nearest-loading").style.display = '';
+	document.getElementById("placeholder").style.display = 'none';
 	
 	// Get the user's actual latitude and longitude
 	navigator.geolocation.getCurrentPosition(function (position, html5Error) {
@@ -138,7 +139,6 @@ let locApprove = () => {
 		letsGo();
 		
 	// Hide the loading gif
-	document.getElementById("placeholder").style.display = 'none';
 	document.getElementById("nearest-loading").style.display = 'none';
 	
 	// Move the world map to your location
