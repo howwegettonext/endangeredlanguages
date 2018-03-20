@@ -108,12 +108,13 @@
         <!-- The following div is for the nearest endangered language map. This should not be interactive/zoomable. -->
         <div class="box-single nearest">
           <script src="script/nearestlang.js"></script>
-          <img src="images/placeholder.png" alt="Nearest Endangered Language Placeholder" class="placeholder">
+          <img src="images/placeholder.png" alt="Nearest Endangered Language Placeholder" id="placeholder">
         </div>
         <div>
-          <h2>Nearest City, Country</h2>
-          <p>XXXX miles/km from you SSJDFKW, spoken by XX people, is endangered.</p>
-          <button type="button" onclick="locApprove()">Find the nearest endangered language</button>
+          <h2><span id="nearest-head"></span></h2>
+          <p><span id="nearest-body"></span></p>
+          <button type="button" onclick="locApprove()" id="nearest-button">Find your nearest endangered language</button>
+          <img src="images/loading.gif" id="nearest-loading">
         </div>
 
       <div class="world">
