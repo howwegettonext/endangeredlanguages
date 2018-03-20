@@ -89,11 +89,12 @@ let letsGo = () => d3.csv("data/languages_number.csv",
 		projection.center([userLon, userLat]);
 
 		// Draw the map
-		let nearMap = d3.json("data/world-50m.json", function (error, world) {
+		d3.json("data/world-50m.json", function (error, world) {
 			if (error) throw error;
 
 			var countries = topojson.feature(world, world.objects.countries).features;
-
+			
+			// Grab the geodata with a normal D3 data join
 			nearSVG.selectAll(".country")
 				.data(countries)
 				.enter().insert("path", ".graticule")
@@ -111,18 +112,16 @@ let letsGo = () => d3.csv("data/languages_number.csv",
 				.attr("r", 20)
 				.style("fill", nearColour(closest));
 		});
-
+		
+		// Change the text on the page
 		d3.select("#nearest-head")
 			.text(`Your nearest endangered language is ${closest.name}`);
 
 		d3.select("#nearest-body")
 			.html(`Spoken by ${nearFormat(closest.speakers)} speakers, UNESCO classifies it as <span id="unesco">${closest.danger.toLowerCase()}</span>.`);
 		
+		// Change the colour of the UNESCO text
 		d3.select("#unesco").style("color", `${nearColour(closest)}`);
-	
-		console.log(`Your nearest endangered language is ${closest.name}, spoken by ${nearFormat(closest.speakers)} speakers. UNESCO classifies it as ${closest.danger.toLowerCase()}.`);
-		
-		
 	});
 
 
@@ -142,6 +141,8 @@ let locApprove = () => {
 	document.getElementById("placeholder").style.display = 'none';
 	document.getElementById("nearest-loading").style.display = 'none';
 	
+	// Move the world map to your location
+		
 	});
 
 };
