@@ -166,6 +166,20 @@ button:hover {
   grid-column-start: 1;
   grid-column-end: 3;
 }
+
+/* BIG CIRCLE */
+
+#bigcircle {
+    pointer-events: none;
+}
+
+/* THE WORLD */
+
+#earth_div {
+    width: 100%;
+    padding-top: 100%;
+}
+
 /* OUTRO */
 
 #outro {
