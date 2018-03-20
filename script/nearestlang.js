@@ -76,18 +76,16 @@ let letsGo = () => d3.csv("data/languages_number.csv",
 				.enter().insert("path", ".graticule")
 				.attr("class", "country")
 				.attr("d", path)
-				.style("fill", "#00000008");
-
-		});
-
-		// Calculate where the dot goes
+				.style("fill", "#cccccc");
+			
+			// Calculate where the dot goes
 		let coords = projection([closest.lon, closest.lat]);
 
 		// Add the dot representing the language
 		let dot = nearSVG.append("circle")
 			.attr("cx", coords[0])
 			.attr("cy", coords[1])
-			.attr("r", 30)
+			.attr("r", 20)
 			.style("fill", function (d) {
 				switch (closest.danger) {
 					case "Vulnerable":
@@ -111,6 +109,8 @@ let letsGo = () => d3.csv("data/languages_number.csv",
 			});
 
 		console.log(`Your nearest endangered language is ${closest.name}, spoken by ${nearFormat(closest.speakers)} speakers. UNESCO classifies it as ${closest.danger.toLowerCase()}.`);
+
+		});
 	});
 
 
