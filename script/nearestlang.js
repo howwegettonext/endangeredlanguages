@@ -18,6 +18,29 @@ let projection = d3.geoAzimuthalEquidistant()
 let path = d3.geoPath()
 	.projection(projection);
 
+// Define the colour logic
+let nearColour = (d) => {
+	switch (d.danger) {
+		case "Vulnerable":
+			return "#619d94";
+
+		case "Definitely endangered":
+			return "#ff8f78";
+
+		case "Severely endangered":
+			return "#fc4952";
+
+		case "Critically endangered":
+			return "#983d52";
+
+		case "Extinct":
+			return "#cccccc";
+
+		default:
+			return "blue";
+	}
+};
+
 // Define a function that calculates the nearest language
 let nearLang = (userLat, userLon, languages) => {
 
@@ -76,51 +99,49 @@ let letsGo = () => d3.csv("data/languages_number.csv",
 				.enter().insert("path", ".graticule")
 				.attr("class", "country")
 				.attr("d", path)
-				.style("fill", "#cccccc");
-			
+				.style("fill", "#f4eedf");
+
 			// Calculate where the dot goes
-		let coords = projection([closest.lon, closest.lat]);
+			let coords = projection([closest.lon, closest.lat]);
 
-		// Add the dot representing the language
-		let dot = nearSVG.append("circle")
-			.attr("cx", coords[0])
-			.attr("cy", coords[1])
-			.attr("r", 20)
-			.style("fill", function (d) {
-				switch (closest.danger) {
-					case "Vulnerable":
-						return "#619d94";
-
-					case "Definitely endangered":
-						return "#ff8f78";
-
-					case "Severely endangered":
-						return "#fc4952";
-
-					case "Critically endangered":
-						return "#983d52";
-
-					case "Extinct":
-						return "#cccccc";
-
-					default:
-						return "blue";
-				}
-			});
-
-		console.log(`Your nearest endangered language is ${closest.name}, spoken by ${nearFormat(closest.speakers)} speakers. UNESCO classifies it as ${closest.danger.toLowerCase()}.`);
-
+			// Add the dot representing the language
+			let dot = nearSVG.append("circle")
+				.attr("cx", coords[0])
+				.attr("cy", coords[1])
+				.attr("r", 20)
+				.style("fill", nearColour(closest));
 		});
+
+		d3.select("#nearest-head")
+			.text(`Your nearest endangered language is ${closest.name}`);
+
+		d3.select("#nearest-body")
+			.html(`Spoken by ${nearFormat(closest.speakers)} speakers, UNESCO classifies it as <span id="unesco">${closest.danger.toLowerCase()}</span>.`);
+		
+		d3.select("#unesco").style("color", `${nearColour(closest)}`);
+	
+		console.log(`Your nearest endangered language is ${closest.name}, spoken by ${nearFormat(closest.speakers)} speakers. UNESCO classifies it as ${closest.danger.toLowerCase()}.`);
+		
+		
 	});
 
 
 // Create a function that executes when the button is clicked
 let locApprove = () => {
+	// Replace the button with a loading gif
+	document.getElementById("nearest-button").style.display = 'none';
+	document.getElementById("nearest-loading").style.display = 'block';
+	
 	// Get the user's actual latitude and longitude
 	navigator.geolocation.getCurrentPosition(function (position, html5Error) {
 		userLat = position.coords.latitude;
 		userLon = position.coords.longitude;
 		letsGo();
+		
+	// Hide the loading gif
+	document.getElementById("placeholder").style.display = 'none';
+	document.getElementById("nearest-loading").style.display = 'none';
+	
 	});
 
 };
