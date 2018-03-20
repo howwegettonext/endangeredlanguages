@@ -169,6 +169,12 @@ button:hover {
     grid-column-end: 3;
 }
 
+
+/* THE BIG CIRCLE */
+
+#thebigcircle {
+    padding: 30px 0;
+}
 /* NEAREST LANGUAGE */
 
 .nearest {
@@ -350,22 +356,22 @@ a svg:hover .social {
 
 @media (max-width: 768px) {
     h3 {
-        top: 760px;
+        top: 750px;
         padding: 0 100px;
     }
     h4 {
-        top: 580px;
+        top: 570px;
     }
 }
 
 @media (max-width:560px) {
     h3 {
-        top: 660px;
+        top: 700px;
         padding: 0 60px;
     }
 
     h4 {
-        top: 520px;
+        top: 560px;
         font-size: 125px;
     }
 
