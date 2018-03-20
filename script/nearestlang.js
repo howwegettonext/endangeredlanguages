@@ -14,7 +14,7 @@ let mapWidth = parseInt(d3.select('.nearest').style('width'), 10);
 let nearFormat = d3.format(",d");
 
 // Define the map projection and pathing function
-let projection = d3.geoAzimuthalEquidistant()
+let projection = d3.geoStereographic()
 	.scale(mapWidth * 3)
 	.translate([mapWidth / 2, mapWidth / 2]);
 
@@ -89,7 +89,7 @@ let letsGo = () => d3.csv("data/languages_number.csv",
 			.attr("width", mapWidth)
 			.attr("height", mapWidth);
 
-		projection.center([userLon, userLat]);
+		projection.rotate([-userLon, -userLat]);
 
 		// Draw the map
 		d3.json("data/world-50m.json", function (error, world) {
@@ -125,6 +125,9 @@ let letsGo = () => d3.csv("data/languages_number.csv",
 		
 		// Change the colour of the UNESCO text
 		d3.select("#unesco").style("color", `${nearColour(closest)}`);
+    
+        // Change the colour of the little rect
+        d3.select("#nearest-rect").style("fill", `${nearColour(closest)}`);
 	});
 
 
@@ -132,7 +135,7 @@ let letsGo = () => d3.csv("data/languages_number.csv",
 let locApprove = () => {
 	// Replace the placeholder with a loading gif, and vanish the button
 	document.getElementById("nearest-button").style.display = 'none';
-	document.getElementById("nearest-loading").style.display = '';
+	document.getElementById("nearest-loading").style.display = 'inline';
 	document.getElementById("placeholder").style.display = 'none';
 	
 	// Get the user's actual latitude and longitude

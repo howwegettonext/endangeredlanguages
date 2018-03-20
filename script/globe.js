@@ -20,7 +20,7 @@ let initialize = () => {
     //earth.flyTo([40.6894, -74.0446]);
 
     // Define the tooltip code
-    let tooltip = (language) => `<b>${language.name}</b> - ${language.danger}<br>Speakers: ${language.speakers}<br><em>${language.blurb}</em>`
+    let tooltip = (language) => `<b>${language.name}</b> - ${language.danger}<br>Speakers: ${language.speakers}<br><em>${language.blurb}</em>`;
 
     // Define the language plotting functions
     let langPlot = (languages, category, markerImg) => {
@@ -32,7 +32,7 @@ let initialize = () => {
             // Give it a tooltip
             point.bindPopup(tooltip(language));
         }
-    }
+    };
 
     // Add the points
     d3.csv("data/languages_number.csv",
@@ -51,7 +51,7 @@ let initialize = () => {
 
         });
 
-}
+};
 
 let update = () => {};
 
