@@ -20,6 +20,10 @@ h2 {
     padding-top: 50px;
 }
 
+.subtitle {
+    padding-top: 0;
+}
+
 h3 {
     font-size: 28px;
     text-align: center;
