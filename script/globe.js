@@ -6,7 +6,7 @@ let initialize = () => {
     // Plot the Earth
     earth = new WE.map('earth_div', {
         zoom: 5,
-        position: [0, 0], // Default start position
+        position: [7.5, 0], // Default start position
     });
 
     // Load the tiles
