@@ -171,11 +171,6 @@ button:hover {
     vertical-align: middle;
 }
 
-.box-single.nearest {
-    max-width: 300px;
-    height: auto;
-}
-
 .world {
     grid-column-start: 1;
     grid-column-end: 3;
@@ -421,7 +416,7 @@ a svg:hover .social {
     .container {
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 300px 300px 300px 300px 300px 300px 300px 300px;
+        grid-template-rows: 370px 300px 370px 300px 370px 300px 370px 300px;
         grid-gap: 35px;
     }
 
