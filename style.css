@@ -400,7 +400,7 @@ a svg:hover .social {
 }
 
 @media (max-width:560px) {
-    h2{
+    .title {
         padding-top: 0;
     }
 
