@@ -74,6 +74,10 @@ img {
     width: 100%;
 }
 
+.border {
+    border: 5px solid #f4eedf;
+}
+
 /* BUTTONS */
 
 button {
@@ -115,9 +119,9 @@ button:hover {
 
 .container {
     display: grid;
-    grid-template-columns: 4fr 3fr;
+    grid-template-columns: 4fr 4fr;
     grid-template-rows: 400px 400px 400px 400px;
-    grid-gap: 15px;
+    grid-gap: 50px;
 }
 
 /* HEADER */

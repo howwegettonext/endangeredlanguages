@@ -73,7 +73,7 @@
             <div class="container">
                 <!-- The following div is for the first focus language static graphic. -->
                 <div class="box-single feature1">
-                    <img src="images/feature1.png" alt="Navajo Map" class="s">
+                    <img src="images/feature1.png" alt="Navajo Map" class="border">
                 </div>
                 <div>
                     <h2 class="title">Navajo: Southwestern US</h2>
@@ -85,9 +85,6 @@
                 </div>
 
                 <!-- The following div is for the second focus language static graphic. -->
-                <div class="box-single feature2">
-                    <img src="images/feature2.png" alt="Crimean Tatar Map">
-                </div>
                 <div>
                     <h2 class="title">Crimean Tatar: Russia & Ukraine</h2>
                     <h2 class="subtitle">100,000 speakers remaining</h2>
@@ -96,10 +93,13 @@
                     </svg>
                     <p>One of a number of languages orphaned by the advance and retreat of Mongol states during the 13th century. Stalin’s USSR ethnically cleansed Crimea in 1944, forcibly transporting the majority of the region’s 220,000 Tatars to what is now Uzbekistan—and while several thousand of the community have moved back since, its language is now scattered among a small, global diaspora.</p>
                 </div>
+                <div class="box-single feature2">
+                    <img src="images/feature2.png" alt="Crimean Tatar Map" class="border">
+                </div>
 
                 <!-- The following div is for the third focus language static graphic. -->
                 <div class="box-single feature3">
-                    <img src="images/feature3.png" alt="Nǀuu Map">
+                    <img src="images/feature3.png" alt="Nǀuu Map" class="border">
                 </div>
                 <div>
                     <h2 class="title">Nǀuu: South Africa</h2>
@@ -111,11 +111,6 @@
                 </div>
 
                 <!-- The following div is for the nearest endangered language map. This should not be interactive/zoomable. -->
-                <div class="box-single nearest">
-                    <script src="script/nearestlang.js"></script>
-                    <img src="images/placeholder.png" alt="Nearest Endangered Language Placeholder" id="placeholder">
-                    <img src="images/loader.gif" id="nearest-loading">
-                </div>
                 <div>
                     <h2 class="title"><span id="nearest-head">Find your nearest endangered language</span></h2>
                     <svg width="50" height="5">
@@ -126,6 +121,11 @@
                     <p><span id="nearest-body"></span></p>
                     <p><span id="nearest-body"></span></p>
                     <button type="button" onclick="locApprove()" id="nearest-button">Locate me</button>
+                </div>
+                <div class="box-single nearest">
+                    <script src="script/nearestlang.js"></script>
+                    <img src="images/placeholder.png" alt="Nearest Endangered Language Placeholder" id="placeholder">
+                    <img src="images/loader.gif" id="nearest-loading">
                 </div>
 
                 <div class="world">
