@@ -43,7 +43,7 @@ let initialize = () => {
 
             // Make markers for each category of languages
             langPlot(languages, "Vulnerable", "images/vul_marker.svg");
-            langPlot(languages, "Definitely endangered", "images/def_marker.svgg");
+            langPlot(languages, "Definitely endangered", "images/def_marker.svg");
             langPlot(languages, "Severely endangered", "images/sev_marker.svg");
             langPlot(languages, "Critically endangered", "images/cri_marker.svg");
         });
