@@ -388,6 +388,11 @@ a svg:hover .social {
     h4 {
         top: 570px;
     }
+
+    #earth_div {
+        height: 700px;
+        width: auto;
+    }
 }
 
 @media (max-width:560px) {
@@ -410,5 +415,10 @@ a svg:hover .social {
 
     .world {
         grid-column-end: 2;
+    }
+
+    #earth_div {
+        height: 500px;
+        width: auto;
     }
 }
