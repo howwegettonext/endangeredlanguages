@@ -72,10 +72,10 @@
 
             <div class="container">
                 <!-- The following div is for the first focus language static graphic. -->
-                <div class="box-single feature1">
+                <div class="box-single feature1" id="showcase1-image">
                     <img src="images/feature1.png" alt="Navajo Map" class="border">
                 </div>
-                <div>
+                <div id="showcase1-text">
                     <h2 class="title">Navajo: Southwestern US</h2>
                     <h2 class="subtitle">120,000 speakers remaining</h2>
                     <svg width="50" height="5">
@@ -85,7 +85,7 @@
                 </div>
 
                 <!-- The following div is for the second focus language static graphic. -->
-                <div>
+                <div id="showcase2-text">
                     <h2 class="title">Crimean Tatar: Russia & Ukraine</h2>
                     <h2 class="subtitle">100,000 speakers remaining</h2>
                     <svg width="50" height="5">
@@ -93,15 +93,15 @@
                     </svg>
                     <p>One of a number of languages orphaned by the advance and retreat of Mongol states during the 13th century. Stalin’s USSR ethnically cleansed Crimea in 1944, forcibly transporting the majority of the region’s 220,000 Tatars to what is now Uzbekistan—and while several thousand of the community have moved back since, its language is now scattered among a small, global diaspora.</p>
                 </div>
-                <div class="box-single feature2">
+                <div class="box-single feature2" id="showcase2-image">
                     <img src="images/feature2.png" alt="Crimean Tatar Map" class="border">
                 </div>
 
                 <!-- The following div is for the third focus language static graphic. -->
-                <div class="box-single feature3">
+                <div class="box-single feature3" id="showcase3-image">
                     <img src="images/feature3.png" alt="Nǀuu Map" class="border">
                 </div>
-                <div>
+                <div id="showcase3-text">
                     <h2 class="title">Nǀuu: South Africa</h2>
                     <h2 class="subtitle">8 speakers remaining</h2>
                     <svg width="50" height="5">
@@ -111,7 +111,7 @@
                 </div>
 
                 <!-- The following div is for the nearest endangered language map. This should not be interactive/zoomable. -->
-                <div>
+                <div id="showcase4-text">
                     <h2 class="title"><span id="nearest-head">Find your nearest endangered language</span></h2>
                     <svg width="50" height="5">
                         <rect width="50" height="5"
@@ -122,19 +122,18 @@
                     <p><span id="nearest-body"></span></p>
                     <button type="button" onclick="locApprove()" id="nearest-button">Locate me</button>
                 </div>
-                <div class="box-single nearest">
+                <div class="box-single nearest" id="showcase4-image">
                     <script src="script/nearestlang.js"></script>
                     <img src="images/placeholder.png" alt="Nearest Endangered Language Placeholder" id="placeholder">
                     <img src="images/loader.gif" id="nearest-loading">
                 </div>
-
+            </div>
                 <div class="world">
                     <h2>The World</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultrices neque in tellus egestas, cursus sodales sem commodo. Vivamus massa ante, dapibus at diam id, euismod auctor sem.</p>
                     <div class="world" id="earth_div"></div>
                 </div>
             </div>
-        </div>
 
         <div id="outro">
             <p>This visualisation was created in <a href="https://d3js.org/">D3v4.js</a>, with <a href="https://github.com/topojson/topojson">TopoJSON</a> and <a href="https://www.webglearth.com">WebGL Earth</a>, by <a href="http://duncangeere.com">Duncan Geere</a> and <a href="http://edenbrack.com/">Eden Brackenbury</a> for <a href="https://howwegettonext.com/the-id-question-6fb3b56052b5">the ID Question</a>.</p>

@@ -416,9 +416,18 @@ a svg:hover .social {
     .container {
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 370px 300px 370px 300px 370px 300px 370px 300px;
+        grid-template-rows: 350px 310px 350px 300px 350px 360px 360px;
         grid-gap: 35px;
     }
+
+    #showcase1-image {order: 1;}
+    #showcase1-text {order: 2;}
+    #showcase2-image {order: 3;}
+    #showcase2-text {order: 4;}
+    #showcase3-image {order: 5;}
+    #showcase3-text {order: 6;}
+    #showcase4-image {order: 7;}
+    #showcase4-text {order: 8;}
 
     .world {
         grid-column-end: 2;
