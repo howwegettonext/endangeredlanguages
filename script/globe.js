@@ -17,7 +17,7 @@ let initialize = () => {
     });
     tiles.addTo(earth);
 
-    // Define the tooltip code
+    // Define the tooltip content code
     let tooltip = (language) => `<b>${language.name}</b> - ${language.danger}<br>Speakers: ${language.speakers}<br><em>${language.blurb}</em>`;
 
     // Define the language plotting functions
