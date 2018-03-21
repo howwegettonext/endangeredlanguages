@@ -169,12 +169,30 @@ button:hover {
     grid-column-end: 3;
 }
 
-
 /* THE BIG CIRCLE */
 
 #bigcircle {
     padding: 30px 0;
 }
+
+/* TERMS OF ENDANGERMENT */
+
+#bluebox {
+    border: 5px solid #609c94;
+}
+
+#peachbox {
+    border: 5px solid #ff8e78;
+}
+
+#redbox {
+    border: 5px solid #fd4851;
+}
+
+#plumbox {
+    border: 5px solid #973D57;
+}
+
 /* NEAREST LANGUAGE */
 
 .nearest {
