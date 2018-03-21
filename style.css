@@ -116,7 +116,7 @@ button:hover {
 .container {
     display: grid;
     grid-template-columns: 4fr 3fr;
-    grid-template-rows: 400px 400px 400px;
+    grid-template-rows: 400px 400px 400px 400px;
     grid-gap: 15px;
 }
 
@@ -168,8 +168,8 @@ button:hover {
 }
 
 .box-single.nearest {
-    width: 400px;
-    height: 400px;
+    max-width: 300px;
+    height: auto;
 }
 
 .world {
@@ -400,6 +400,10 @@ a svg:hover .social {
 }
 
 @media (max-width:560px) {
+    h2{
+        padding-top: 0;
+    }
+
     h3 {
         top: 700px;
         padding: 0 60px;
@@ -413,7 +417,7 @@ a svg:hover .social {
     .container {
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 300px 140px 300px 140px 300px 140px;
+        grid-template-rows: 300px 300px 300px 300px 300px 300px 300px 300px;
         grid-gap: 35px;
     }
 
