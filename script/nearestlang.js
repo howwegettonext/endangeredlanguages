@@ -91,7 +91,7 @@ let letsGo = () => d3.csv("data/languages_number.csv",
         // Draw the map
         d3.json("data/world-50m.json", function (error, world) {
             if (error) throw error;
-            
+
             // Load the map data
             var countries = topojson.feature(world, world.objects.countries).features;
 
@@ -111,20 +111,22 @@ let letsGo = () => d3.csv("data/languages_number.csv",
                 .attr("xlink:href", () => {
                     switch (closest.danger) {
                         case "Vulnerable":
-                            return "images/vul_marker.png";
+                            return "images/vul_marker.svg";
 
                         case "Definitely endangered":
-                            return "images/def_marker.png";
+                            return "images/def_marker.svg";
 
                         case "Severely endangered":
-                            return "images/sev_marker.png";
+                            return "images/sev_marker.svg";
 
                         case "Critically endangered":
-                            return "images/cri_marker.png";
+                            return "images/cri_marker.svg";
                     }
                 })
-                .attr("x", coords[0]-10)
-                .attr("y", coords[1]-20)
+                .attr('height', '20')
+                .attr('width', '20')
+                .attr("x", coords[0] - 10)
+                .attr("y", coords[1] - 20)
         });
 
         // Change the text on the page
