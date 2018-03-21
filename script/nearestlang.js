@@ -84,7 +84,8 @@ let letsGo = () => d3.csv("data/languages_number.csv",
         let nearSVG = d3.select(".nearest")
             .append("svg")
             .attr("width", mapWidth)
-            .attr("height", mapWidth);
+            .attr("height", mapWidth)
+            .classed("border", true);
 
         projection.rotate([-userLon, -userLat]);
 
