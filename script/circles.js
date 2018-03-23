@@ -127,7 +127,7 @@ function initialise(languages) {
     // Add captions to the continent boxes
     let makeCaption = (svg, continent) => svg.append("text")
         .attr("x", countrybox_diameter/2)
-        .attr("y", countrybox_diameter-20)
+        .attr("y", 20)
         .attr("text-anchor", "middle")
         .attr("font-size", 18)
         .attr("fill", "#f3eee0")
