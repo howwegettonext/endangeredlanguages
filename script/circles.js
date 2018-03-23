@@ -214,7 +214,7 @@ function initialise(languages) {
         .text((d) => format(d));
 }
 
-function update() {
+function circleUpdate() {
     // Get new width and height
     diameter = parseInt(d3.select('#bigcircle').style('width'), 10);
     boxsingle_diameter = parseInt(d3.select('.box-single').style('width'), 10);
@@ -279,6 +279,6 @@ d3.csv("data/languages_name.csv",
         initialise(languages);
 
         // Listen for resize and update
-        window.addEventListener("resize", update);
+        window.addEventListener("resize", circleUpdate);
 
     });
