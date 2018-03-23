@@ -154,8 +154,8 @@ button:hover {
 
 .box {
     display: inline-block;
-    width: 400px;
-    height: 400px;
+    width: 375px;
+    height: 375px;
     margin: 2em 1em;
     vertical-align: middle;
 }
