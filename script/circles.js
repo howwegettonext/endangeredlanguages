@@ -210,7 +210,7 @@ function initialise(languages) {
         .attr("y", scaleHeight * 4 / 5)
         .attr("text-anchor", "middle")
         .attr("fill", "#f3eee0")
-        .attr("font-size", 13)
+        .attr("font-size", 12)
         .text((d) => format(d));
 }
 
