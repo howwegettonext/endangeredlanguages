@@ -76,15 +76,15 @@
                 <!-- The following div is for the Oceania chart. Please include continent name below the SVG. -->
                 <div class="box oceania">Oceania</div>
             </div>
-            
+
             <h2>Languages in profile</h2>
             <p>In this section, we’ve picked out three languages that have particularly interesting stories behind them. You can also identify your nearest endangered language.</p>
             <div class="container">
                 <!-- The following div is for the first focus language static graphic. -->
-                <div class="box-single feature1">
+                <div class="box-single feature1" id="showcase1-image">
                     <img src="images/feature1.png" alt="Navajo Map" class="border">
                 </div>
-                <div>
+                <div id="showcase1-text">
                     <h2 class="title">Navajo: Southwestern US</h2>
                     <h2 class="subtitle">120,000 speakers remaining</h2>
                     <svg width="50" height="5">
@@ -94,7 +94,7 @@
                 </div>
 
                 <!-- The following div is for the second focus language static graphic. -->
-                <div>
+                <div id="showcase2-text">
                     <h2 class="title">Crimean Tatar: Russia & Ukraine</h2>
                     <h2 class="subtitle">100,000 speakers remaining</h2>
                     <svg width="50" height="5">
@@ -102,15 +102,15 @@
                     </svg>
                     <p>One of a number of languages orphaned by the advance and retreat of Mongol states during the 13th century. Stalin’s USSR ethnically cleansed Crimea in 1944, forcibly transporting the majority of the region’s 220,000 Tatars to what is now Uzbekistan—and while several thousand of the community have moved back since, its language is now scattered among a small, global diaspora. <a href="https://www.youtube.com/watch?v=Obv_tZzUA8s&feature=youtu.be&t=60">Hear it spoken</a>.</p>
                 </div>
-                <div class="box-single feature2">
+                <div class="box-single feature2" id="showcase2-image">
                     <img src="images/feature2.png" alt="Crimean Tatar Map" class="border">
                 </div>
 
                 <!-- The following div is for the third focus language static graphic. -->
-                <div class="box-single feature3">
+                <div class="box-single feature3" id="showcase3-image">
                     <img src="images/feature3.png" alt="Nǀuu Map" class="border">
                 </div>
-                <div>
+                <div id="showcase3-text">
                     <h2 class="title">Nǀuu: South Africa</h2>
                     <h2 class="subtitle">8 speakers remaining</h2>
                     <svg width="50" height="5">
@@ -120,7 +120,7 @@
                 </div>
 
                 <!-- The following div is for the nearest endangered language map. This should not be interactive/zoomable. -->
-                <div>
+                <div id="showcase4-text">
                     <h2 class="title"><span id="nearest-head">Find your nearest endangered language</span></h2>
                     <svg width="50" height="5">
                         <rect width="50" height="5"
@@ -131,17 +131,15 @@
                     <p><span id="nearest-body"></span></p>
                     <button type="button" onclick="locApprove()" id="nearest-button">Locate me</button>
                 </div>
-                <div class="box-single nearest">
-
-                    <img src="images/placeholder.png" alt="Nearest Endangered Language Placeholder" id="placeholder">
-                    <img src="images/loader.gif" id="nearest-loading">
-                </div>
-
-                <div class="world">
-                    <h2>A World of Languages</h2>
-                    <p>Finally, here’s every language listed as endangered in the Unesco Atlas of the World’s Languages in Danger. You can pan and zoom the map, and click on a point to find out more about it. The colour coding is the same as in the clumps above.</p>
-                    <div class="world" id="earth_div"></div>
-                </div>
+                <div class="box-single nearest" id="showcase4-image">
+                        <img src="images/placeholder.png" alt="Nearest Endangered Language Placeholder" id="placeholder">
+                        <img src="images/loader.gif" id="nearest-loading">
+                    </div>
+            </div>
+            <div class="world">
+                <h2>A World of Languages</h2>
+                <p>Finally, here’s every language listed as endangered in the Unesco Atlas of the World’s Languages in Danger. You can pan and zoom the map, and click on a point to find out more about it. The colour coding is the same as in the clumps above.</p>
+                <div class="world" id="earth_div"></div>
             </div>
         </div>
 
