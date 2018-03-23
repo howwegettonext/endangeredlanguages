@@ -108,7 +108,7 @@ button:hover {
 
 #mainwidth {
     width: 90%;
-    max-width: 850px;
+    max-width: 900px;
     height: auto;
     padding: 2px 20px;
     margin: 0 auto;
@@ -154,8 +154,8 @@ button:hover {
 
 .box {
     display: inline-block;
-    width: 200px;
-    height: 200px;
+    width: 400px;
+    height: 400px;
     margin: 2em 1em;
     vertical-align: middle;
 }

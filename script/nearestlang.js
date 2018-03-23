@@ -127,7 +127,7 @@ let letsGo = () => d3.csv("data/languages_number.csv",
                 .attr('height', '20')
                 .attr('width', '20')
                 .attr("x", coords[0] - 10)
-                .attr("y", coords[1] - 20)
+                .attr("y", coords[1] - 20);
         });
 
         // Change the text on the page
