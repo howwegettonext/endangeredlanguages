@@ -2,186 +2,186 @@
 <html lang="en">
 
 <head>
-    <title>Disappearing Languages</title>
-    <link rel="icon" href="images/favicon.png" type="image/png" sizes="24x24">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http - equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://use.typekit.net/auw8bny.css">
-    <script src="//d3js.org/d3.v4.js"></script>
-    <script src="//www.webglearth.com/v2/api.js"></script>
-    <script src="//d3js.org/topojson.v1.min.js"></script>
+  <title>Disappearing Languages</title>
+  <link rel="icon" href="images/favicon.png" type="image/png" sizes="24x24">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http - equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.typekit.net/auw8bny.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+  <script src="//d3js.org/d3.v4.js"></script>
+  <script src="//d3js.org/topojson.v1.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
 </head>
 
 <body id="thebody">
-    <main>
-        <div id="mainwidth">
-            <div id="header">
-                <a href="https://howwegettonext.com/"><img src="images/next.png" class="button" id="nextlogo" alt="How We Get to Next Home"></a>
-            </div>
-            <span id="seriestitle">
+  <main>
+    <div id="mainwidth">
+      <div id="header">
+        <a href="https://howwegettonext.com/"><img src="images/next.png" class="button" id="nextlogo" alt="How We Get to Next Home"></a>
+      </div>
+      <span id="seriestitle">
         <a href="https://howwegettonext.com/the-id-question-6fb3b56052b5">THE ID QUESTION</a>
       </span>
-            <h1>Disappearing Languages</h1>
-            <p>The way we speak has an enormous effect on our identities. The ever-changing languages, dialects or even accents that we use define our relationship with the world, allowing us to express concepts and ideas that might be impossible in other languages.</p>
-            <p><em>Iktsuarpok</em>, for example, is an Inuit word for the feeling of anticipation when you're expecting someone that leads you to constantly check to see if they're coming, while <em>hiraeth</em> is a Welsh word that reflects a type of longing for the homeland or the romanticized past, The Japanese word <em>komorebi</em> refers to the sunlight that filters through the leaves of trees, while the Yaghan word <em>mamihlapinatapai</em> describes the wordless, meaningful look shared by two people who both want to initiate something, but are reluctant to do so.</p>
-            <p>The world's languages provide humanity with an immeasurable cultural richness, but they're in steep decline. You might think this is a modern phenomenon, but you'd be wrong - <a href="https://sustainableunh.unh.edu/sites/sustainableunh.unh.edu/files/images/Krauss(1992).pdf">linguists believe</a> that the peak of language diversity was in 8,000 BC, when more than 20,000 may have been in existence. Today, less than half of that number remain.</p>
-            <p>In the charts and maps below, we've investigated the languages that UNESCO describes as threatened in its <a href="http://www.unesco.org/languages-atlas/index.php">Atlas of the World's Languages in Danger</a>. Each language is represented by a circle - sized by the number of people that speak it, and colored by how endangered it is. Further down, we've profiled several languages in danger, and you can also calculate your nearest endangered language. Finally, there's a map where you can explore the global distribution of these languages.</p>
-            <p>To read about the role that languages play in identity, be sure to check out the article that accompanies this this visual essay. Plus, if you want to talk about digital identity in more detail, be sure to join our <a href="https://www.facebook.com/groups/idquestion/">ID Question Facebook group</a>.</p>
+      <h1>Disappearing Languages</h1>
+      <p>The way we speak has an enormous effect on our identities. The ever-changing languages, dialects or even accents that we use define our relationship with the world, allowing us to express concepts and ideas that might be impossible in other languages.</p>
+      <p><em>Iktsuarpok</em>, for example, is an Inuit word for the feeling of anticipation when you're expecting someone that leads you to constantly check to see if they're coming, while <em>hiraeth</em> is a Welsh word that reflects a type of longing for the homeland or the romanticized past, The Japanese word <em>komorebi</em> refers to the sunlight that filters through the leaves of trees, while the Yaghan word <em>mamihlapinatapai</em> describes the wordless, meaningful look shared by two people who both want to initiate something, but are reluctant to do so.</p>
+      <p>The world's languages provide humanity with an immeasurable cultural richness, but they're in steep decline. You might think this is a modern phenomenon, but you'd be wrong - <a href="https://sustainableunh.unh.edu/sites/sustainableunh.unh.edu/files/images/Krauss(1992).pdf">linguists believe</a> that the peak of language diversity was in 8,000 BC, when more than 20,000 may have been in existence. Today, less than half of that number remain.</p>
+      <p>In the charts and maps below, we've investigated the languages that UNESCO describes as threatened in its <a href="http://www.unesco.org/languages-atlas/index.php">Atlas of the World's Languages in Danger</a>. Each language is represented by a circle - sized by the number of people that speak it, and colored by how endangered it is. Further down, we've profiled several languages in danger, and you can also calculate your nearest endangered language. Finally, there's a map where you can explore the global distribution of these languages.</p>
+      <p>To read about the role that languages play in identity, be sure to check out the article that accompanies this this visual essay. Plus, if you want to talk about digital identity in more detail, be sure to join our <a href="https://www.facebook.com/groups/idquestion/">ID Question Facebook group</a>.</p>
 
-            <div id="bigcircle">
-                <h4>2469</h4>
-                <h3>languages are at risk of extinction around the world.</h3>
-            </div>
+      <div id="bigcircle">
+        <h4>2469</h4>
+        <h3>languages are at risk of extinction around the world.</h3>
+      </div>
 
-            <h2>How many people speak these languages?</h2>
-            <p>First, let’s look at how the size of each dot corresponds with the number of people who speak each language. Here’s a comparison of different dot sizes, and how many speakers they indicate:</p>
-            
-            <div id="scale"></div>
+      <h2>How many people speak these languages?</h2>
+      <p>First, let’s look at how the size of each dot corresponds with the number of people who speak each language. Here’s a comparison of different dot sizes, and how many speakers they indicate:</p>
 
-            <p>There are plenty of endangered languages with fewer than 10,000 speakers that are hard to see on these bubble charts. Near the bottom of the page, you’ll find a map showing all of them.</p>
+      <div id="scale"></div>
 
-            <h2>How endangered are these languages?</h2>
-            <p>Unesco puts endangered languages into four different categories, depending on how they’re used. We’ve sorted the bubbles from above into those categories, each represented by a colour. It’s worth noting that there is only a weak relationship between the number of speakers and how endangered a language is. Some languages have only a few speakers, but are less endangered than others that may be spoken by many people.</p>
+      <p>There are plenty of endangered languages with fewer than 10,000 speakers that are hard to see on these bubble charts. Near the bottom of the page, you’ll find a map showing all of them.</p>
 
-            <div class="big-box">
-                <!-- The following div is for the vulnerable degree of endangerment. -->
-                <div class="box-single vulnerable"></div>
-                <p id="bluebox">Most children speak the language, but it may be restricted to certain domains</p>
-                <!-- The following div is for the definitely endangered degree of endangerment. -->
-                <div class="box-single definitely"></div>
-                <p id="peachbox">Children no longer learn the language as mother tongue in the home</p>
-                <!-- The following div is for the severely endangered degree of endangerment. -->
-                <div class="box-single severely"></div>
-                <p id="redbox">Language spoken by grandparents and older generations; while the parent generation may understand it they do not speak it to children or among themselves</p>
-                <!-- The following div is for the crtically endangered degree of endangerment. -->
-                <div class="box-single critically"></div>
-                <p id="plumbox">The youngest speakers are grandparents or older, and they speak the language partially or infrequently</p>
-            </div>
+      <h2>How endangered are these languages?</h2>
+      <p>Unesco puts endangered languages into four different categories, depending on how they’re used. We’ve sorted the bubbles from above into those categories, each represented by a colour. It’s worth noting that there is only a weak relationship between the number of speakers and how endangered a language is. Some languages have only a few speakers, but are less endangered than others that may be spoken by many people.</p>
 
-            <h2>Where are these languages spoken?</h2>
-            <p>We can also break down the bubble chart above into parts of the world. The charts below show how endangered languages are distributed around the world, but be careful when reading it because the size of each clump reflects the number of speakers - not the number of languages.</p>
+      <div class="big-box">
+        <!-- The following div is for the vulnerable degree of endangerment. -->
+        <div class="box-single vulnerable"></div>
+        <p id="bluebox">Most children speak the language, but it may be restricted to certain domains</p>
+        <!-- The following div is for the definitely endangered degree of endangerment. -->
+        <div class="box-single definitely"></div>
+        <p id="peachbox">Children no longer learn the language as mother tongue in the home</p>
+        <!-- The following div is for the severely endangered degree of endangerment. -->
+        <div class="box-single severely"></div>
+        <p id="redbox">Language spoken by grandparents and older generations; while the parent generation may understand it they do not speak it to children or among themselves</p>
+        <!-- The following div is for the crtically endangered degree of endangerment. -->
+        <div class="box-single critically"></div>
+        <p id="plumbox">The youngest speakers are grandparents or older, and they speak the language partially or infrequently</p>
+      </div>
 
-            <p>For example, while Asia has the biggest clump, and also the most endangered languages, the continent with the fewest endangered languages is actually Europe. Oceania has about the same number of endangered languages as Africa, but they’re spoken by fewer people so it’s clump is the smallest - not surprising considering most of those languages are distributed across scattered chains of tiny islands.</p>
-            <div class="big-box">
-                <!-- The following div is for the Asia chart. Please include continent name below the SVG. -->
-                <div class="box asia"></div>
-                <!-- The following div is for the Africa chart. Please include continent name below the SVG. -->
-                <div class="box africa"></div>
-                <!-- The following div is for the Europe chart. Please include continent name below the SVG. -->
-                <div class="box europe"></div>
-                <!-- The following div is for the North America chart. Please include continent name below the SVG. -->
-                <div class="box namerica"></div>
-                <!-- The following div is for the South America chart. Please include continent name below the SVG. -->
-                <div class="box samerica"></div>
-                <!-- The following div is for the Oceania chart. Please include continent name below the SVG. -->
-                <div class="box oceania"></div>
-            </div>
+      <h2>Where are these languages spoken?</h2>
+      <p>We can also break down the bubble chart above into parts of the world. The charts below show how endangered languages are distributed around the world, but be careful when reading it because the size of each clump reflects the number of speakers - not the number of languages.</p>
 
-            <h2>Languages in profile</h2>
-            <p>In this section, we’ve picked out three languages that have particularly interesting stories behind them. You can also identify your nearest endangered language.</p>
-            <div class="container">
-                <!-- The following div is for the first focus language static graphic. -->
-                <div class="box-single feature1" id="showcase1-image">
-                    <img src="images/feature1.png" alt="Navajo Map" class="border">
-                </div>
-                <div id="showcase1-text">
-                    <h2 class="title">Navajo: Southwestern US</h2>
-                    <h2 class="subtitle">120,000 speakers remaining</h2>
-                    <svg width="50" height="5">
+      <p>For example, while Asia has the biggest clump, and also the most endangered languages, the continent with the fewest endangered languages is actually Europe. Oceania has about the same number of endangered languages as Africa, but they’re spoken by fewer people so it’s clump is the smallest - not surprising considering most of those languages are distributed across scattered chains of tiny islands.</p>
+      <div class="big-box">
+        <!-- The following div is for the Asia chart. Please include continent name below the SVG. -->
+        <div class="box asia"></div>
+        <!-- The following div is for the Africa chart. Please include continent name below the SVG. -->
+        <div class="box africa"></div>
+        <!-- The following div is for the Europe chart. Please include continent name below the SVG. -->
+        <div class="box europe"></div>
+        <!-- The following div is for the North America chart. Please include continent name below the SVG. -->
+        <div class="box namerica"></div>
+        <!-- The following div is for the South America chart. Please include continent name below the SVG. -->
+        <div class="box samerica"></div>
+        <!-- The following div is for the Oceania chart. Please include continent name below the SVG. -->
+        <div class="box oceania"></div>
+      </div>
+
+      <h2>Languages in profile</h2>
+      <p>In this section, we’ve picked out three languages that have particularly interesting stories behind them. You can also identify your nearest endangered language.</p>
+      <div class="container">
+        <!-- The following div is for the first focus language static graphic. -->
+        <div class="box-single feature1" id="showcase1-image">
+          <img src="images/feature1.png" alt="Navajo Map" class="border">
+        </div>
+        <div id="showcase1-text">
+          <h2 class="title">Navajo: Southwestern US</h2>
+          <h2 class="subtitle">120,000 speakers remaining</h2>
+          <svg width="50" height="5">
                         <rect width="50" height="5" style="fill: rgb(97, 157, 148);" />
                     </svg>
-                    <p>The most widely spoken indigenous language north of Mexico, Navajo is part of the Na-Dené group, which linguists now believe to be connected to the nearly-extinct Yeniseian languages of central Siberia. Several hundred speakers ("code talkers") were infamously used by the US during World War 2 for encoding sensitive messages, and, post-war, a number of education programs have begun its slow revitalization. <a href="https://www.youtube.com/watch?v=XFayFUiyv20">Hear it spoken</a>.</p>
-                </div>
+          <p>The most widely spoken indigenous language north of Mexico, Navajo is part of the Na-Dené group, which linguists now believe to be connected to the nearly-extinct Yeniseian languages of central Siberia. Several hundred speakers ("code talkers") were infamously used by the US during World War 2 for encoding sensitive messages, and, post-war, a number of education programs have begun its slow revitalization. <a href="https://www.youtube.com/watch?v=XFayFUiyv20">Hear it spoken</a>.</p>
+        </div>
 
-                <!-- The following div is for the second focus language static graphic. -->
-                <div id="showcase2-text">
-                    <h2 class="title">Crimean Tatar: Russia & Ukraine</h2>
-                    <h2 class="subtitle">100,000 speakers remaining</h2>
-                    <svg width="50" height="5">
+        <!-- The following div is for the second focus language static graphic. -->
+        <div id="showcase2-text">
+          <h2 class="title">Crimean Tatar: Russia & Ukraine</h2>
+          <h2 class="subtitle">100,000 speakers remaining</h2>
+          <svg width="50" height="5">
                         <rect width="50" height="5" style="fill: rgb(252, 73, 82);" />
                     </svg>
-                    <p>One of a number of languages orphaned by the advance and retreat of Mongol states during the 13th century. Stalin’s USSR ethnically cleansed Crimea in 1944, forcibly transporting the majority of the region’s 220,000 Tatars to what is now Uzbekistan—and while several thousand of the community have moved back since, its language is now scattered among a small, global diaspora. <a href="https://www.youtube.com/watch?v=Obv_tZzUA8s&feature=youtu.be&t=60">Hear it spoken</a>.</p>
-                </div>
-                <div class="box-single feature2" id="showcase2-image">
-                    <img src="images/feature2.png" alt="Crimean Tatar Map" class="border">
-                </div>
+          <p>One of a number of languages orphaned by the advance and retreat of Mongol states during the 13th century. Stalin’s USSR ethnically cleansed Crimea in 1944, forcibly transporting the majority of the region’s 220,000 Tatars to what is now Uzbekistan—and while several thousand of the community have moved back since, its language is now scattered among a small, global diaspora. <a href="https://www.youtube.com/watch?v=Obv_tZzUA8s&feature=youtu.be&t=60">Hear it spoken</a>.</p>
+        </div>
+        <div class="box-single feature2" id="showcase2-image">
+          <img src="images/feature2.png" alt="Crimean Tatar Map" class="border">
+        </div>
 
-                <!-- The following div is for the third focus language static graphic. -->
-                <div class="box-single feature3" id="showcase3-image">
-                    <img src="images/feature3.png" alt="Nǀuu Map" class="border">
-                </div>
-                <div id="showcase3-text">
-                    <h2 class="title">Nǀuu: South Africa</h2>
-                    <h2 class="subtitle">8 speakers remaining</h2>
-                    <svg width="50" height="5">
+        <!-- The following div is for the third focus language static graphic. -->
+        <div class="box-single feature3" id="showcase3-image">
+          <img src="images/feature3.png" alt="Nǀuu Map" class="border">
+        </div>
+        <div id="showcase3-text">
+          <h2 class="title">Nǀuu: South Africa</h2>
+          <h2 class="subtitle">8 speakers remaining</h2>
+          <svg width="50" height="5">
                         <rect width="50" height="5" style="fill: rgb(152, 61, 82);" />
                     </svg>
-                    <p>One of the many languages of southern Africa displaced during European colonization—especially by Dutch-derived Afrikaans and Khoekhoe, one of Namibia’s national languages—Nǀuu is now rarely spoken aloud as its handful of speakers live in different villages. It is expected to die completely soon, although it will at the least live on as the official motto of South Africa’s Northern Cape province, coined by 101-year-old Elsie Vaalbooi: “Sa ||a !aĩsi ’uĩsi” (“Strive for a better life”). <a href="https://www.youtube.com/watch?v=e5RkfixyXqc">Hear it spoken</a>.</p>
-                </div>
+          <p>One of the many languages of southern Africa displaced during European colonization—especially by Dutch-derived Afrikaans and Khoekhoe, one of Namibia’s national languages—Nǀuu is now rarely spoken aloud as its handful of speakers live in different villages. It is expected to die completely soon, although it will at the least live on as the official motto of South Africa’s Northern Cape province, coined by 101-year-old Elsie Vaalbooi: “Sa ||a !aĩsi ’uĩsi” (“Strive for a better life”). <a href="https://www.youtube.com/watch?v=e5RkfixyXqc">Hear it spoken</a>.</p>
+        </div>
 
-                <!-- The following div is for the nearest endangered language map. This should not be interactive/zoomable. -->
-                <div id="showcase4-text">
-                    <h2 class="title"><span id="nearest-head">Find your nearest endangered language</span></h2>
-                    <svg width="50" height="5">
+        <!-- The following div is for the nearest endangered language map. This should not be interactive/zoomable. -->
+        <div id="showcase4-text">
+          <h2 class="title"><span id="nearest-head">Find your nearest endangered language</span></h2>
+          <svg width="50" height="5">
                         <rect width="50" height="5"
                                id="nearest-rect"
                                style="fill: #f4eedf;" />
                     </svg>
-                    <p><span id="nearest-body"></span></p>
-                    <p><span id="nearest-body"></span></p>
-                    <button type="button" onclick="locApprove()" id="nearest-button">Locate me</button>
-                </div>
-                <div class="box-single nearest" id="showcase4-image">
-                        <img src="images/placeholder.png" alt="Nearest Endangered Language Placeholder" id="placeholder">
-                        <img src="images/loader.gif" id="nearest-loading">
-                    </div>
-            </div>
-            <div class="world">
-                <h2>A World of Languages</h2>
-                <p>Finally, here’s every language listed as endangered in the Unesco Atlas of the World’s Languages in Danger. You can pan and zoom the map, and click on a point to find out more about it. The colour coding is the same as in the clumps above.</p>
-                <div class="world" id="earth_div"></div>
-            </div>
+          <p><span id="nearest-body"></span></p>
+          <p><span id="nearest-body"></span></p>
+          <button type="button" onclick="locApprove()" id="nearest-button">Locate me</button>
         </div>
+        <div class="box-single nearest" id="showcase4-image">
+          <img src="images/placeholder.png" alt="Nearest Endangered Language Placeholder" id="placeholder">
+          <img src="images/loader.gif" id="nearest-loading">
+        </div>
+      </div>
+      <div class="world">
+        <h2>A World of Languages</h2>
+        <p>Finally, here’s every language listed as endangered in the Unesco Atlas of the World’s Languages in Danger. You can pan and zoom the map, and click on a point to find out more about it. The colour coding is the same as in the clumps above.</p>
+        <div class="world" id="earth_div"></div>
+      </div>
+    </div>
 
-        <div id="outro">
-            <p>This visual essay was created in <a href="https://d3js.org/">D3v4.js</a>, with <a href="https://github.com/topojson/topojson">TopoJSON</a> and <a href="https://www.webglearth.com">WebGL Earth</a>, by <a href="http://duncangeere.com">Duncan Geere</a>, <a href="http://edenbrack.com/">Eden Brackenbury</a> amd <a href="https://twitter.com/iansteadman">Ian Steadman</a> for <a href="https://howwegettonext.com/the-id-question-6fb3b56052b5">the ID Question</a>.</p>
-            <p id="credits">2011 Data from <a href="https://www.theguardian.com/news/datablog/2011/apr/15/language-extinct-endangered">Unesco via the Guardian</a>. Maps from <a href="https://www.amcharts.com">amCharts</a>, <a href="http://naturalearthdata.com/">Natural Earth</a> and <a href="http://maps.stamen.com/">Stamen</a>. Icon from <a href="https://www.flaticon.com/authors/smashicons">Smashicons</a>. Find the source code on <a href="https://github.com/howwegettonext/endangeredlanguages">Github</a>.</p>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fstorythings.github.io%2F2017databreaches%2F&amp;src=sdkpreparse">
+    <div id="outro">
+      <p id="credits">This visual essay was created in <a href="https://d3js.org/">D3v4.js</a>, with <a href="https://github.com/topojson/topojson">TopoJSON</a> and <a href="https://www.webglearth.com">WebGL Earth</a>, by <a href="http://duncangeere.com">Duncan Geere</a>, <a href="http://edenbrack.com/">Eden Brackenbury</a> amd <a href="https://twitter.com/iansteadman">Ian Steadman</a> for <a href="https://howwegettonext.com/the-id-question-6fb3b56052b5">the ID Question</a>. 2011 data from <a href="https://www.theguardian.com/news/datablog/2011/apr/15/language-extinct-endangered">Unesco via the Guardian</a>. Maps from <a href="https://www.amcharts.com">amCharts</a>, <a href="http://naturalearthdata.com/">Natural Earth</a> and <a href="http://maps.stamen.com/">Stamen</a>. Icon from <a href="https://www.flaticon.com/authors/smashicons">Smashicons</a>. Find the source code on <a href="https://github.com/howwegettonext/endangeredlanguages">Github</a>.</p>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fstorythings.github.io%2F2017databreaches%2F&amp;src=sdkpreparse">
 					<svg class="button" id="facebook" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 167.657 167.657" style="enable-background:new 0 0 167.657 167.657;" xml:space="preserve" width="512px" height="512px">
 						<path class="social" d="M83.829,0.349C37.532,0.349,0,37.881,0,84.178c0,41.523,30.222,75.911,69.848,82.57v-65.081H49.626   v-23.42h20.222V60.978c0-20.037,12.238-30.956,30.115-30.956c8.562,0,15.92,0.638,18.056,0.919v20.944l-12.399,0.006   c-9.72,0-11.594,4.618-11.594,11.397v14.947h23.193l-3.025,23.42H94.026v65.653c41.476-5.048,73.631-40.312,73.631-83.154   C167.657,37.881,130.125,0.349,83.829,0.349z" fill="#6f9b94"/>
 					</svg>
 				</a>
-            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw">
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw">
 					<svg class="button" id="twitter" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve" width="512px" height="512px">
 							<path class="social" d="M612,116.258c-22.525,9.981-46.694,16.75-72.088,19.772c25.929-15.527,45.777-40.155,55.184-69.411    c-24.322,14.379-51.169,24.82-79.775,30.48c-22.907-24.437-55.49-39.658-91.63-39.658c-69.334,0-125.551,56.217-125.551,125.513    c0,9.828,1.109,19.427,3.251,28.606C197.065,206.32,104.556,156.337,42.641,80.386c-10.823,18.51-16.98,40.078-16.98,63.101    c0,43.559,22.181,81.993,55.835,104.479c-20.575-0.688-39.926-6.348-56.867-15.756v1.568c0,60.806,43.291,111.554,100.693,123.104    c-10.517,2.83-21.607,4.398-33.08,4.398c-8.107,0-15.947-0.803-23.634-2.333c15.985,49.907,62.336,86.199,117.253,87.194    c-42.947,33.654-97.099,53.655-155.916,53.655c-10.134,0-20.116-0.612-29.944-1.721c55.567,35.681,121.536,56.485,192.438,56.485    c230.948,0,357.188-191.291,357.188-357.188l-0.421-16.253C573.872,163.526,595.211,141.422,612,116.258z" fill="#6f9b94"/>
 					</svg>
 				</a>
-            <!-- Begin MailChimp Signup Form -->
-            <div id="mc_embed_signup">
-                <form action="https://storythings.us7.list-manage.com/subscribe/post?u=ac3c63206e0226f0b2c43f01d&amp;id=f18977f495" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                    <div id="mc_embed_signup_scroll">
-                        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ac3c63206e0226f0b2c43f01d_f18977f495" tabindex="-1" value=""></div>
-                        <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-                    </div>
-                </form>
-            </div>
-            <!--End mc_embed_signup-->
-        </div>
-        <div id="seriesintro">
-            <a href="https://howwegettonext.com/the-id-question-6fb3b56052b5"><img src="images/idquestion.png" alt="ID Question Hub" id="serieslogo"></a>
-            <p>The ID Question is a <a href="https://howwegettonext.com/">How We Get To Next</a> production.</p>
-            <p>Join <a href="https://www.facebook.com/groups/idquestion/">the ID Question Facebook group</a> to discuss the subject of identity in the modern age with us.</p>
-        </div>
+      <!-- Begin MailChimp Signup Form -->
+      <div id="mc_embed_signup">
+        <form action="https://storythings.us7.list-manage.com/subscribe/post?u=ac3c63206e0226f0b2c43f01d&amp;id=f18977f495" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          <div id="mc_embed_signup_scroll">
+            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ac3c63206e0226f0b2c43f01d_f18977f495" tabindex="-1" value=""></div>
+            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+          </div>
+        </form>
+      </div>
+      <!--End mc_embed_signup-->
+    </div>
+    <div id="seriesintro">
+      <a href="https://howwegettonext.com/the-id-question-6fb3b56052b5"><img src="images/idquestion.png" alt="ID Question Hub" id="serieslogo"></a>
+      <p>The ID Question is a <a href="https://howwegettonext.com/">How We Get To Next</a> production.</p>
+      <p>Join <a href="https://www.facebook.com/groups/idquestion/">the ID Question Facebook group</a> to discuss the subject of identity in the modern age with us.</p>
+    </div>
 
-        <script src="script/circles.js"></script>
-        <script src="script/nearestlang.js"></script>
-        <script src="script/globe.js"></script>
+    <script src="script/circles.js"></script>
+    <script src="script/nearestlang.js"></script>
+    <script src="script/map.js"></script>
 
-        </div>
-    </main>
+    </div>
+  </main>
 </body>
 
 </html>
