@@ -53,6 +53,8 @@ p {
 
 #credits {
     padding: 0;
+    width: 90%;
+    max-width: 900px;
 }
 
 a {
