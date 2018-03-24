@@ -27,7 +27,7 @@ let langPlot = (languages, category, icon) => {
   for (let language of languages.filter(lang => lang.danger == category)) {
     // Create the point
     L.marker([language.lat, language.lon], {icon: icon})
-      .bindPopup(`<b>${language.name}</b> - ${language.danger}<br>Speakers: ${language.speakers}<br><em>${language.blurb}</em>`)
+      .bindPopup(`<b>${language.name}</b> - ${language.danger}<br>Speakers: ${format(language.speakers)}<br><em>${language.blurb}</em>`)
       .addTo(map);
   }
 };
