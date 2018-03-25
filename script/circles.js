@@ -104,7 +104,7 @@ let cleanData = function (d) {
 };
 
 let big_svg, vul_svg, def_svg, sev_svg, cri_svg, as_svg, af_svg, eu_svg, na_svg, sa_svg, oc_svg;
-let as_caption, af_caption, eu_caption, na_caption, sa_caption, oc_caption;
+let as_caption, af_caption, eu_caption, na_caption, sa_caption, oc_caption, textScaleFactor, lilTextScaleFactor, makeBigCap, makeLilCap, bigSize, lilSize;
 let root, vul_root, def_root, sev_root, cri_root, as_root, af_root, eu_root, na_root, sa_root, oc_root;
 let node, vul_node, def_node, sev_node, cri_node, as_node, af_node, eu_node, na_node, sa_node, oc_node;
 let circles, vul_circles, def_circles, sev_circles, cri_circles, as_circles, af_circles, eu_circles, na_circles, sa_circles, oc_circles;
@@ -123,16 +123,25 @@ function initialise(languages) {
     na_svg = makeSVG(".namerica", countrybox_diameter);
     sa_svg = makeSVG(".samerica", countrybox_diameter);
     oc_svg = makeSVG(".oceania", countrybox_diameter);
+
+    // Set a text scale factor
+    textScaleFactor = d3.scaleLinear()
+        .domain([300, 900]) // expected limits of SVG width
+        .range([1, 1.5]); // when SVG is 1/2 width, text will be 2/3 size
     
+    lilTextScaleFactor = d3.scaleLinear()
+        .domain([300, 900]) // expected limits of SVG width
+        .range([0.6, 1.5]); // when SVG is 1/2 width, text will be 2/3 size
+
     // Add captions to the continent boxes
     let makeCaption = (svg, continent) => svg.append("text")
-        .attr("x", countrybox_diameter/2)
+        .attr("x", countrybox_diameter / 2)
         .attr("y", 20)
         .attr("text-anchor", "middle")
         .attr("font-size", 18)
         .attr("fill", "#f3eee0")
         .text(continent);
-    
+
     as_caption = makeCaption(as_svg, "Asia");
     af_caption = makeCaption(af_svg, "Africa");
     eu_caption = makeCaption(eu_svg, "Europe");
@@ -188,7 +197,7 @@ function initialise(languages) {
         .append("svg")
         .attr("width", scaleWidth)
         .attr("height", scaleHeight);
-    
+
     // Pick the numbers that'll go into it
     scale_numbers = [10000, 50000, 100000, 500000, 1000000, 5000000];
 
@@ -201,7 +210,7 @@ function initialise(languages) {
         .attr("cy", scaleHeight / 3)
         .attr("stroke", "#f3eee0")
         .attr("fill", "none");
-    
+
     // Add the text
     scale_text = scale_svg.selectAll("scaleText")
         .data(scale_numbers)
@@ -212,6 +221,33 @@ function initialise(languages) {
         .attr("fill", "#f3eee0")
         .attr("font-size", 12)
         .text((d) => format(d));
+
+    // Big caption text size @ 900px width
+    bigSize = 150;
+    lilSize = 20;
+
+    // Add caption to big circle last so it's on top
+    makeBigCap = big_svg.append("text")
+        .classed("bigCap", true)
+        .attr("x", diameter / 2)
+        .attr("y", diameter / 2)
+        .attr("text-anchor", "middle")
+        .attr("alignment-baseline", "central")
+        .attr("font-size", textScaleFactor(diameter) * bigSize)
+        .attr("font-weight", "bold")
+        .attr("fill", "#f3eee0")
+        .text("2469");
+        
+    makeLilCap = big_svg.append("text")
+        .classed("lilCap", true)
+        .attr("x", diameter / 2)
+        .attr("y", diameter*0.7)
+        .attr("text-anchor", "middle")
+        .attr("font-size", lilTextScaleFactor(diameter) * lilSize)
+        .attr("font-weight", "bold")
+        .attr("fill", "#f3eee0")
+        .text("languages are at risk of extinction around the world");
+
 }
 
 function circleUpdate() {
@@ -268,6 +304,14 @@ function circleUpdate() {
     resize(na_circles);
     resize(sa_circles);
     resize(oc_circles);
+
+    makeBigCap.attr("x", diameter / 2)
+        .attr("y", diameter / 2)
+        .attr("font-size", textScaleFactor(diameter) * bigSize);
+
+    makeLilCap.attr("x", diameter / 2)
+        .attr("y", diameter*0.7)
+        .attr("font-size", lilTextScaleFactor(diameter) * lilSize);
 }
 
 // Load the data
