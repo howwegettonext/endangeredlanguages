@@ -241,7 +241,7 @@ function initialise(languages) {
     makeLilCap = big_svg.append("text")
         .classed("lilCap", true)
         .attr("x", diameter / 2)
-        .attr("y", diameter*0.7)
+        .attr("y", ((diameter / 2) + (textScaleFactor(diameter) * bigSize)/2 + 10))
         .attr("text-anchor", "middle")
         .attr("font-size", lilTextScaleFactor(diameter) * lilSize)
         .attr("font-weight", "bold")
@@ -310,7 +310,7 @@ function circleUpdate() {
         .attr("font-size", textScaleFactor(diameter) * bigSize);
 
     makeLilCap.attr("x", diameter / 2)
-        .attr("y", diameter*0.7)
+        .attr("y", ((diameter / 2) + (textScaleFactor(diameter) * bigSize)/2 + 10))
         .attr("font-size", lilTextScaleFactor(diameter) * lilSize);
 }
 
