@@ -228,7 +228,7 @@ function initialise(languages) {
 
     // Add caption to big circle last so it's on top
     makeBigCap = big_svg.append("text")
-        .classed("bigCap", true)
+        .classed("cap", true)
         .attr("x", diameter / 2)
         .attr("y", diameter / 2)
         .attr("text-anchor", "middle")
@@ -239,7 +239,7 @@ function initialise(languages) {
         .text("2469");
         
     makeLilCap = big_svg.append("text")
-        .classed("lilCap", true)
+        .classed("cap", true)
         .attr("x", diameter / 2)
         .attr("y", ((diameter / 2) + (textScaleFactor(diameter) * bigSize)/2 + 10))
         .attr("text-anchor", "middle")

@@ -154,6 +154,10 @@ button:hover {
     text-align: center;
 }
 
+.cap {
+    pointer-events: none;
+}
+
 .box {
     display: inline-block;
     width: 375px;
