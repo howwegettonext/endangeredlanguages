@@ -24,34 +24,13 @@ h2 {
     padding-top: 0;
 }
 
-h3 {
-    font-size: 28px;
-    text-align: center;
-    z-index: 999;
-    position: absolute;
-    top: 810px;
-    left: 0;
-    right: 0;
-}
-
-h4 {
-    font-size: 215px;
-    text-align: center;
-    line-height: 180px;
-    z-index: 999;
-    position: absolute;
-    top: 630px;
-    left: 0;
-    right: 0;
-    pointer-events: none;
-}
-
 p {
     font-size: 18px;
     padding: 10px 0;
 }
 
 .bringtofront {
+    position: relative;
     z-index: 999;
 }
 
