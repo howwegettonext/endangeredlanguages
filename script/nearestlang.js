@@ -162,7 +162,7 @@ let locApprove = () => {
         document.getElementById("nearest-loading").style.display = 'none';
 
         // Move the world map to your location
-        map.flyTo({center: [userLon, userLat], zoom: 6});
+        map.flyTo({center: [userLon, userLat], zoom: 4});
         
     });
 
