@@ -232,7 +232,7 @@ function initialise(languages) {
         .attr("y", scaleHeight * 4 / 5)
         .attr("text-anchor", "middle")
         .attr("fill", "#f3eee0")
-        .attr("font-size", 12)
+        .attr("font-size", 15)
         .text((d) => scaleAbbrv(d));
 
     // Big caption text size @ 900px width
