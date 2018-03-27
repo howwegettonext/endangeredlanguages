@@ -152,6 +152,7 @@ button:hover {
 
 .big-box {
     text-align: center;
+
 }
 
 .cap {
@@ -185,7 +186,11 @@ button:hover {
 /* THE BIG CIRCLE */
 
 #bigcircle {
-    padding-top: 30px;
+    height: 450px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* TERMS OF ENDANGERMENT */
@@ -224,7 +229,7 @@ button:hover {
 
 #earth_div {
     width: 100%;
-  height: 400px;
+    height: 400px;
 }
 
 .we-pp {
@@ -427,14 +432,30 @@ a svg:hover .social {
         grid-gap: 35px;
     }
 
-    #showcase1-image {order: 1;}
-    #showcase1-text {order: 2;}
-    #showcase2-image {order: 3;}
-    #showcase2-text {order: 4;}
-    #showcase3-image {order: 5;}
-    #showcase3-text {order: 6;}
-    #showcase4-image {order: 7;}
-    #showcase4-text {order: 8;}
+    #showcase1-image {
+        order: 1;
+    }
+    #showcase1-text {
+        order: 2;
+    }
+    #showcase2-image {
+        order: 3;
+    }
+    #showcase2-text {
+        order: 4;
+    }
+    #showcase3-image {
+        order: 5;
+    }
+    #showcase3-text {
+        order: 6;
+    }
+    #showcase4-image {
+        order: 7;
+    }
+    #showcase4-text {
+        order: 8;
+    }
 
     .world {
         grid-column-end: 2;
