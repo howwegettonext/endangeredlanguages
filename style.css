@@ -51,6 +51,10 @@ p {
     padding: 10px 0;
 }
 
+.bringtofront {
+    z-index: 999;
+}
+
 #credits {
     padding: 0;
     width: 90%;
