@@ -8,6 +8,19 @@ let countrybox_diameter = parseInt(d3.select('.box').style('width'), 10);
 
 // Set a number formatter for the tooltips
 let format = d3.format(",d");
+let formatScale = d3.format(".0s");
+
+// Number formatter for the scale 
+function scaleAbbrv(x) {
+    var s = formatScale(x);
+    switch (s[s.length - 1]) {
+        case "G":
+            return s.slice(0, -1) + "b";
+        case "M":
+            return s.slice(0, -1) + "m";
+    }
+    return s;
+}
 
 // Set a colour scheme
 let colourPicker = function (d) {
@@ -128,7 +141,7 @@ function initialise(languages) {
     textScaleFactor = d3.scaleLinear()
         .domain([300, 900]) // expected limits of SVG width
         .range([1, 1.5]); // when SVG is 1/2 width, text will be 2/3 size
-    
+
     lilTextScaleFactor = d3.scaleLinear()
         .domain([300, 900]) // expected limits of SVG width
         .range([0.6, 1.5]); // when SVG is 1/2 width, text will be 2/3 size
@@ -220,7 +233,7 @@ function initialise(languages) {
         .attr("text-anchor", "middle")
         .attr("fill", "#f3eee0")
         .attr("font-size", 12)
-        .text((d) => format(d));
+        .text((d) => scaleAbbrv(d));
 
     // Big caption text size @ 900px width
     bigSize = 140;
@@ -237,11 +250,11 @@ function initialise(languages) {
         .attr("font-weight", "bold")
         .attr("fill", "#f3eee0")
         .text("2469");
-        
+
     makeLilCap = big_svg.append("text")
         .classed("cap", true)
         .attr("x", diameter / 2)
-        .attr("y", ((diameter / 2) + (textScaleFactor(diameter) * bigSize)/2 + 10))
+        .attr("y", ((diameter / 2) + (textScaleFactor(diameter) * bigSize) / 2 + 10))
         .attr("text-anchor", "middle")
         .attr("font-size", lilTextScaleFactor(diameter) * lilSize)
         .attr("font-weight", "bold")
@@ -310,7 +323,7 @@ function circleUpdate() {
         .attr("font-size", textScaleFactor(diameter) * bigSize);
 
     makeLilCap.attr("x", diameter / 2)
-        .attr("y", ((diameter / 2) + (textScaleFactor(diameter) * bigSize)/2 + 10))
+        .attr("y", ((diameter / 2) + (textScaleFactor(diameter) * bigSize) / 2 + 10))
         .attr("font-size", lilTextScaleFactor(diameter) * lilSize);
 }
 
