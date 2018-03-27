@@ -219,8 +219,9 @@ button:hover {
     height: 400px;
 }
 
-.we-pp {
-    color: #272924
+.mapboxgl-popup-content {
+    color: #272924;
+    max-width: 300px;
 }
 
 /* OUTRO */
