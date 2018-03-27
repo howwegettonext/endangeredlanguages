@@ -223,7 +223,7 @@ function initialise(languages) {
         .text((d) => format(d));
 
     // Big caption text size @ 900px width
-    bigSize = 150;
+    bigSize = 140;
     lilSize = 20;
 
     // Add caption to big circle last so it's on top
