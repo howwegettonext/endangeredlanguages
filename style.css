@@ -26,7 +26,7 @@ h2 {
 
 p {
     font-size: 18px;
-    padding: 10px 0;
+    padding: 10px 0 20px 0;
 }
 
 .bringtofront {
@@ -422,8 +422,8 @@ a svg:hover .social {
     .container {
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 370px 330px 370px 330px 370px 390px 360px;
-        grid-gap: 15px;
+        grid-template-rows: 370px 340px 370px 340px 370px 400px 360px;
+        grid-gap: 5px;
     }
 
     #showcase1-image {
