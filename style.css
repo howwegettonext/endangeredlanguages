@@ -422,8 +422,8 @@ a svg:hover .social {
     .container {
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 370px 310px 370px 300px 370px 360px 360px;
-        grid-gap: 35px;
+        grid-template-rows: 370px 330px 370px 330px 370px 390px 360px;
+        grid-gap: 15px;
     }
 
     #showcase1-image {
