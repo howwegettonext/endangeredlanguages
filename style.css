@@ -97,14 +97,12 @@ button:hover {
     height: auto;
     padding: 2px 20px;
     margin: 0 auto;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
+
 }
 
 .container {
     display: grid;
-    grid-template-columns: 4fr 4fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 400px 400px 400px 400px;
     grid-gap: 50px;
 }
@@ -156,8 +154,6 @@ button:hover {
     height: 100%;
     max-width: 400px;
     margin: auto;
-    margin-top: 1em;
-    margin-bottom: 1em;
     vertical-align: middle;
 }
 
