@@ -12,6 +12,9 @@ var map = new mapboxgl.Map({
     zoom: 0.6 // See most of the map
 });
 
+map.scrollZoom.disable();
+map.addControl(new mapboxgl.NavigationControl());
+
 // When you click
 map.on('click', function (e) {
     var features = map.queryRenderedFeatures(e.point, {
