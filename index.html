@@ -29,7 +29,18 @@
 <body id="thebody">
     <main>
         <div id="mainwidth">
-            <div id="header"><a href="https://howwegettonext.com/"><img src="images/next.png" class="button" id="nextlogo" alt="How We Get to Next Home"></a></div><span id="seriestitle"><a href="https://howwegettonext.com/the-id-question-6fb3b56052b5">THE ID QUESTION</a></span>
+            <div id="header">
+              <a href="https://howwegettonext.com/"><img src="images/next.png" class="button" id="nextlogo" alt="How We Get to Next Home"></a>
+              <nav>
+                  <ul>
+                      <li><a href="https://howwegettonext.com/archive/">THEMES</a></li>
+                      <li><a href="https://howwegettonext.com/series/">SERIES</a></li>
+                      <li><a href="https://howwegettonext.com/beats/">BEATS</a></li>
+                      <li><a href="https://interactive.howwegettonext.com">INTERACTIVES</a></li>
+                      <li><a href="https://howwegettonext.com/we-wont-get-to-next/">ABOUT</a></li>
+                  </ul>
+              </nav>
+            </div>
             <h1 class="bringtofront">Disappearing Languages</h1>
             <p class="bringtofront">The way we speak has an enormous effect on our identities. The ever-changing languages, dialects, or even accents that we use define our relationship with the world, allowing us to express concepts and ideas that might be impossible in other languages.</p>
             <p class="bringtofront"><em>Iktsuarpok</em>, for example, is an Inuit word for the feeling of anticipation when you&#8217;re expecting someone that leads you to constantly check to see if they&#8217;ve arrived, while <em>hiraeth</em> is a Welsh word that reflects a type of longing for the homeland or the romanticized past. The Japanese word <em>komorebi</em> refers to the sunlight that filters through the leaves of trees, while the Yaghan word <em>mamihlapinatapai</em> describes the wordless, meaningful look shared by two people who both want to initiate something, but are reluctant to do so.</p>
@@ -110,27 +121,20 @@
                 <div class="world border" id="earth_div"></div>
             </div>
             <p>To read about the role that languages play in identity, be sure to check out the <a href="https://howwegettonext.com/can-language-save-communities-under-threat-from-a-globalized-world-649a7ddabd6a">article that accompanies this visual essay</a>. Plus, if you want to talk about digital identity in more detail, be sure to join our <a href="https://www.facebook.com/groups/idquestion/">ID Question Facebook group</a>.</p>
-        </div><img src="images/spacer.png" class="spacer">
+        <img src="images/spacer.png" class="spacer">
         <div id="outro">
             <p id="credits">This visual essay was created in <a href="https://d3js.org/">D3v4.js</a>, with <a href="https://github.com/topojson/topojson">TopoJSON</a> and <a href="https://www.mapbox.com/mapbox-gl-js/api/">MapboxGL</a>, by <a href="http://duncangeere.com">Duncan Geere</a>,
                 <a href="http://edenbrack.com/">Eden Brackenbury</a> and <a href="https://twitter.com/iansteadman">Ian Steadman</a> for <a href="https://howwegettonext.com/the-id-question-6fb3b56052b5">the ID Question</a>. 2011 data from <a href="https://www.theguardian.com/news/datablog/2011/apr/15/language-extinct-endangered">UNESCO via the Guardian</a>. Maps from <a href="https://www.amcharts.com">amCharts</a>,
-                <a href="http://naturalearthdata.com/">Natural Earth</a> and <a href="http://www.mapbox.com/">Mapbox</a>. Icon from <a href="https://www.flaticon.com/authors/smashicons">Smashicons</a>. Find the source code on <a href="https://github.com/howwegettonext/endangeredlanguages">Github</a>.</p><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fstorythings.github.io%2F2017databreaches%2F&amp;src=sdkpreparse"><svg class="button" id="facebook" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 167.657 167.657" style="enable-background:new 0 0 167.657 167.657;" xml:space="preserve" width="512px" height="512px"><path class="social" d="M83.829,0.349C37.532,0.349,0,37.881,0,84.178c0,41.523,30.222,75.911,69.848,82.57v-65.081H49.626   v-23.42h20.222V60.978c0-20.037,12.238-30.956,30.115-30.956c8.562,0,15.92,0.638,18.056,0.919v20.944l-12.399,0.006   c-9.72,0-11.594,4.618-11.594,11.397v14.947h23.193l-3.025,23.42H94.026v65.653c41.476-5.048,73.631-40.312,73.631-83.154   C167.657,37.881,130.125,0.349,83.829,0.349z" fill="#6f9b94"/></svg></a><a href="https://twitter.com/share?ref_src=twsrc%5Etfw"><svg class="button" id="twitter" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve" width="512px" height="512px"><path class="social" d="M612,116.258c-22.525,9.981-46.694,16.75-72.088,19.772c25.929-15.527,45.777-40.155,55.184-69.411    c-24.322,14.379-51.169,24.82-79.775,30.48c-22.907-24.437-55.49-39.658-91.63-39.658c-69.334,0-125.551,56.217-125.551,125.513    c0,9.828,1.109,19.427,3.251,28.606C197.065,206.32,104.556,156.337,42.641,80.386c-10.823,18.51-16.98,40.078-16.98,63.101    c0,43.559,22.181,81.993,55.835,104.479c-20.575-0.688-39.926-6.348-56.867-15.756v1.568c0,60.806,43.291,111.554,100.693,123.104    c-10.517,2.83-21.607,4.398-33.08,4.398c-8.107,0-15.947-0.803-23.634-2.333c15.985,49.907,62.336,86.199,117.253,87.194    c-42.947,33.654-97.099,53.655-155.916,53.655c-10.134,0-20.116-0.612-29.944-1.721c55.567,35.681,121.536,56.485,192.438,56.485    c230.948,0,357.188-191.291,357.188-357.188l-0.421-16.253C573.872,163.526,595.211,141.422,612,116.258z" fill="#6f9b94"/></svg></a>
-            <!-- Begin MailChimp Signup Form -->
-            <div id="mc_embed_signup">
-                <form action="https://storythings.us7.list-manage.com/subscribe/post?u=ac3c63206e0226f0b2c43f01d&amp;id=f18977f495" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                    <div id="mc_embed_signup_scroll"><input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ac3c63206e0226f0b2c43f01d_f18977f495" tabindex="-1" value=""></div>
-                        <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-                    </div>
-                </form>
-            </div>
-            <!--End mc_embed_signup-->
+                <a href="http://naturalearthdata.com/">Natural Earth</a> and <a href="http://www.mapbox.com/">Mapbox</a>. Icon from <a href="https://www.flaticon.com/authors/smashicons">Smashicons</a>. Find the source code on <a href="https://github.com/howwegettonext/endangeredlanguages">Github</a>.</p>
         </div>
         <div id="seriesintro"><a href="https://howwegettonext.com/the-id-question-6fb3b56052b5"><img src="images/idquestion.png" alt="ID Question Hub" id="serieslogo"></a>
             <p>The ID Question is a <a href="https://howwegettonext.com/">How We Get To Next</a> production.</p>
-            <p>Join <a href="https://www.facebook.com/groups/idquestion/">the ID Question Facebook group</a> to discuss the subject of identity in the modern age with us.</p>
+            <p>How We Get To Next was a magazine that explored the future of science, technology, and culture from 2014 to 2019. Our interactives explored everything from neglected tropical diseases to government data breaches.</p>
         </div>
+        <div id="footer">
+            <p class="fineprint">© Copyright Storythings Ltd</p>
+        </div>
+
         <script src="script/circles.js"></script>
         <script src="script/nearestlang.js"></script>
         <script src="script/mapbox.js"></script>
