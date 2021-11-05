@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http - equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://use.typekit.net/auw8bny.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <script src="//d3js.org/d3.v4.js"></script>
     <script src="//d3js.org/topojson.v1.min.js"></script>
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.js'></script>
@@ -32,14 +32,19 @@
             <div id="header">
               <a href="https://howwegettonext.com/"><img src="images/next.png" class="button" id="nextlogo" alt="How We Get to Next Home"></a>
               <nav>
-                  <ul>
-                      <li><a href="https://howwegettonext.com/archive/">THEMES</a></li>
-                      <li><a href="https://howwegettonext.com/series/">SERIES</a></li>
-                      <li><a href="https://howwegettonext.com/beats/">BEATS</a></li>
-                      <li><a href="https://interactive.howwegettonext.com">INTERACTIVES</a></li>
-                      <li><a href="https://howwegettonext.com/we-wont-get-to-next/">ABOUT</a></li>
-                  </ul>
-              </nav>
+                <ul>
+                    <li><a href="https://howwegettonext.com/themes/">THEMES</a></li>
+                    <li><a href="https://howwegettonext.com/series/">SERIES</a></li>
+                    <li><a href="https://howwegettonext.com/beats/">BEATS</a></li>
+                    <li><a href="https://interactive.howwegettonext.com">INTERACTIVES</a></li>
+                    <li class="has-submenu">
+                      <a href="https://howwegettonext.com/about-how-we-get-to-next/">ABOUT</a>
+                      <div class="submenu">
+                        <a href="https://howwegettonext.com/you-can-republish-our-content/" class="submenu-item">You Can Republish Our Content</a>
+                      </div>
+                    </li>
+                </ul>
+            </nav>
             </div>
             <h1 class="bringtofront">Disappearing Languages</h1>
             <p class="bringtofront">The way we speak has an enormous effect on our identities. The ever-changing languages, dialects, or even accents that we use define our relationship with the world, allowing us to express concepts and ideas that might be impossible in other languages.</p>
@@ -120,14 +125,14 @@
                 <p>Finally, here&#8217;s every language listed as endangered in the UNESCO Atlas of the World&#8217;s Languages in Danger. You can pan and zoom the map, and click on a point to find out more about it. The color coding is the same as in the clumps above.</p>
                 <div class="world border" id="earth_div"></div>
             </div>
-            <p>To read about the role that languages play in identity, be sure to check out the <a href="https://howwegettonext.com/can-language-save-communities-under-threat-from-a-globalized-world-649a7ddabd6a">article that accompanies this visual essay</a>. Plus, if you want to talk about digital identity in more detail, be sure to join our <a href="https://www.facebook.com/groups/idquestion/">ID Question Facebook group</a>.</p>
+            <p>To read about the role that languages play in identity, be sure to check out the <a href="https://howwegettonext.com/can-language-save-communities-under-threat-from-a-globalized-world">article that accompanies this visual essay</a>. Plus, if you want to talk about digital identity in more detail, be sure to join our <a href="https://www.facebook.com/groups/idquestion/">ID Question Facebook group</a>.</p>
         <img src="images/spacer.png" class="spacer">
         <div id="outro">
             <p id="credits">This visual essay was created in <a href="https://d3js.org/">D3v4.js</a>, with <a href="https://github.com/topojson/topojson">TopoJSON</a> and <a href="https://www.mapbox.com/mapbox-gl-js/api/">MapboxGL</a>, by <a href="http://duncangeere.com">Duncan Geere</a>,
-                <a href="http://edenbrack.com/">Eden Brackenbury</a> and <a href="https://twitter.com/iansteadman">Ian Steadman</a> for <a href="https://howwegettonext.com/the-id-question-6fb3b56052b5">the ID Question</a>. 2011 data from <a href="https://www.theguardian.com/news/datablog/2011/apr/15/language-extinct-endangered">UNESCO via the Guardian</a>. Maps from <a href="https://www.amcharts.com">amCharts</a>,
+                <a href="http://edenbrack.com/">Eden Brackenbury</a> and <a href="https://twitter.com/iansteadman">Ian Steadman</a> for <a href="https://howwegettonext.com/the-id-question">the ID Question</a>. 2011 data from <a href="https://www.theguardian.com/news/datablog/2011/apr/15/language-extinct-endangered">UNESCO via the Guardian</a>. Maps from <a href="https://www.amcharts.com">amCharts</a>,
                 <a href="http://naturalearthdata.com/">Natural Earth</a> and <a href="http://www.mapbox.com/">Mapbox</a>. Icon from <a href="https://www.flaticon.com/authors/smashicons">Smashicons</a>. Find the source code on <a href="https://github.com/howwegettonext/endangeredlanguages">Github</a>.</p>
         </div>
-        <div id="seriesintro"><a href="https://howwegettonext.com/the-id-question-6fb3b56052b5"><img src="images/idquestion.png" alt="ID Question Hub" id="serieslogo"></a>
+        <div id="seriesintro"><a href="https://howwegettonext.com/the-id-question"><img src="images/idquestion.png" alt="ID Question Hub" id="serieslogo"></a>
             <p>The ID Question is a <a href="https://howwegettonext.com/">How We Get To Next</a> production.</p>
             <p>How We Get To Next was a magazine that explored the future of science, technology, and culture from 2014 to 2019. Our interactives explored everything from neglected tropical diseases to government data breaches.</p>
         </div>
@@ -138,6 +143,11 @@
         <script src="script/circles.js"></script>
         <script src="script/nearestlang.js"></script>
         <script src="script/mapbox.js"></script>
+        <script
+          src="https://code.jquery.com/jquery-3.6.0.min.js"
+          integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+          crossorigin="anonymous"></script>
+          <script src="script/index-scripts.js"></script>
         </div>
     </main>
 </body>

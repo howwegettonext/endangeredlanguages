@@ -10,9 +10,16 @@ html {
 }
 
 body {
-    font-family: "futura-pt", sans-serif;
+    font-family: 'Merriweather Sans', serif;
+    font-weight: 300;
     color: #f4eedf;
     background-color: #272924;
+    line-height: 1.5;
+}
+
+h1,h2,h3 {
+  font-family: 'Merriweather Sans', sans-serif;
+
 }
 
 h1 {
@@ -152,6 +159,24 @@ nav ul li {
     list-style: none;
     display: inline-block;
     padding: 10px 4px;
+}
+
+
+nav ul li a {
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+.has-submenu {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  width: 300px;
+  background: #272924;
+  left: 0;
+  padding: 15px 0;
 }
 
 /* GRID */
